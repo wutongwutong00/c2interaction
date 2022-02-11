@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Garden</title>
+    
+    <link rel="stylesheet" href="https://use.typekit.net/ady7ply.css">
+
+    <style>
+
+      
+      body:read-only  {
+        margin: 30px;
+        background-image: url(assets/milkdecoration_pampa04.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        font-family: neue-haas-grotesk-display,sans-serif;
+font-weight: 200;
+font-style: normal;
+      }
+
+      .hand {
+        position: absolute;
+        right: 200px;
+        bottom: 150px;
+        transition: transform .2s;
+      }
+        
+      .hand:hover {
+        /* animation-duration: 2s;
+        animation-name: spinit;
+        animation-iteration-count: infinite; */
+        transform: scale(1.3);
+      }
+      
+      /* @keyframes spinit {
+        0% {
+          /* transform: rotate(0deg); */
+        /* }
+
+        100% {
+          transform: scale(1.4);
+        }
+      }  */
+
+      .flower {
+        position: absolute;
+        bottom: 0;
+        left:50%;
+      }
+
+      .flower:active {
+        opacity: 0;
+      }
+
+      .gradient {
+        width: 500px;
+        height: 500px;
+        background-image: radial-gradient( rgba(255,251,0,1) 10%,rgb(255, 251, 0,0)70%);
+        position: absolute;
+        bottom: 0;
+        left:55%;
+        z-index:-1;
+      }
+
+     
+
+      h2 {
+        font-size: 85px;
+        line-height: 90px;
+        position: absolute;
+        bottom: 0;
+        z-index:-1;
+        filter: blur(4px);
+      }
+
+      h2:hover {
+        filter: blur(0px);
+        z-index:0;
+      }
+
+      h1 {
+        font-size: 60px;
+        color: rgba(255,251,0);
+        margin-left:70px ;
+        border: 2px solid rgba(255,251,0);
+        border-radius: 100px;
+        padding-top: 8px;
+        padding-bottom: 11px;
+        padding-left: 40px;
+        padding-right: 40px;
+        width: fit-content;
+        font-weight: 700;
+        margin: 10px;
+      }
+      
+      h1:hover{
+        background-color: rgba(255,251,0);
+        border: 2px solid rgba(255,251,0);
+        color: white;
+      }
+
+      a:link {
+      color: white;
+      text-decoration: none;
+      }
+
+      a:visited{
+        color: blue;
+      }
+      
+      span:target{
+        background-color:  rgba(255,251,0);
+        
+      }
+
+      span:target::before {
+        font: 70% sans-serif;
+  content: "►";
+  color: blue;
+  margin-right: .25em;
+      }
+
+      .back {
+float: left;
+position: absolute;
+left: 10%;
+font-size: 20px;
+padding: 10px;
+      }
+
+      .back:hover {
+        background-color:  rgba(255,251,0);
+        padding: 10px;
+      }
+
+    </style>
+</head>
+      <body>
+    <div class="pictures">  
+    <img class="hand" src="assets/ -4.png" width="500px">
+    <img class="flower" src="assets/554f0bdd-f283-4a2e-80c7b3446183e72b.png" width="700px">
+    <div class="gradient"></div>
+  </div>  
+
+     
+        <h1><a href="https://en.wikipedia.org/wiki/Peony">Peony</a></h1>
+        <p class="back"><a href=index.html>undo</a></p>
+        <h1><a href="index.html#p1">?</a></h1>
+        <h2>the peony is named after Paeon (also spelled Paean), a student of Asclepius, the 
+          Greek god of medicine and healing. <span id="p1">In Greek mythology, when Asclepius became jealous 
+          of his pupil, Zeus saved Paeon from the wrath of Asclepius by turning him into the peony flower.</span></h2>
+
+
+      </body>
+
+    <script>
+    </script>
+    </html>
