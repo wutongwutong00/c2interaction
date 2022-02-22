@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>On Punctuation</title>
+    <link rel="stylesheet" href="https://use.typekit.net/sih0fsn.css">
+
+<style>
+
+:root {
+--h1-font-size-screen:6vw;
+--h1-font-size-mobile:10vw;
+--p-font-size-screen:1.6vw;
+--p-font-size-mobile:3.5vw;
+
+}
+
+    body{
+margin:10%;
+margin-top:10%;
+    }
+
+    h1{
+font-family: adobe-garamond-pro,serif;
+font-weight: 400;
+font-style: normal;
+font-size: var(--h1-font-size-screen);
+line-height: 90%;
+
+    }
+
+    h1:hover{
+text-decoration: underline;
+text-decoration-style: solid;
+text-decoration-thickness: 5%;
+    }
+    
+
+p {
+    padding: 10%;
+    font-family: adobe-garamond-pro,serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--p-font-size-screen);
+    display: none;
+    color: black;
+}
+
+/* h1>.afterpunctuation {
+    position: relative;
+    z-index: 0;
+    display: none;
+}
+h1>.afterpunctuation:active{
+    position: absolute;
+    z-index: 2;
+    display: block;
+} */
+
+
+span {
+    text-decoration: underline;
+    text-decoration-style: solid;
+}
+
+@media screen and (max-width: 1200px) {
+    p{font-size:20px;}
+
+}
+
+@media screen and (max-width: 800px) {
+    h1{font-size:var(--h1-font-size-mobile);}
+    p{font-size:var(--p-font-size-mobile);
+        padding: 5%;}
+}
+
+
+</style>
+</head>
+<body>
+<!-- first chapter of excerpt__click on texts to generate more text, after clicking turns into punctuations -->    
+
+    <h1 id="text">Gertrude Stein<br><i>on</i> Punctuation</h1>
+    <!-- <h1 class="afterpunctuation">
+        ..,.,..,...,,.,.,.,.,.,.,.,,..,,..
+    </h1> -->
+
+    <p id="appear">There are some punctuations that are interesting and there are some punctuations that are not. 
+        Let us begin with the punctuations that are not. Of these the one but the first and the most 
+        the completely most uninteresting is the question mark. The question mark is alright when it 
+        is all alone when it is used as a brand on cattle or when it could be used in decoration but 
+        connected with writing it is completely entirely completely uninteresting. It is evident that 
+        is you ask a question you ask a question but anybody who can read at all knows when a question 
+        is a question as it is written in writing. Therefore I ask you therefore wherefore should one 
+        use the question mark. Beside it does not in its form go with ordinary printing and so it pleases 
+        neither the eye nor the ear and it is therefore like a noun, just an unnecessary name of something. 
+        A question is a question, anybody can know that a question is a question and so why add to it the 
+        question mark when it is already there when the question is already there in the writing. 
+        Therefore I never could bring myself to use a question mark, I always found it positively 
+        revolting, and now very few do use it. Exclamation marks have the same difficulty and also 
+        quotation marks, they are unnecessary, they are ugly, they spoil the line of the writing or 
+        the printing and anyway what is the use, if you do not know that a question is a question what 
+        is the use of its being a question. The same thing is true of a quotation. When I first began 
+        writing I found it simply impossible to use question marks and quotation marks and exclamation 
+        points and now anybody sees it that way. Perhaps some day they will see it some other way but 
+        not at any rate anybody can and does <span id="text">see it that way.</span></p>
+
+    <p id="appear">So there are the uninteresting things in punctuation uninteresting in a way that is perfectly 
+        obvious, and so we do not have to go any farther into that. There are besides dashes and dots, 
+        and these might be interesting spaces might be interesting. They might if one felt that way about them. </p>
+
+
+
+<!-- last chapter of excerpt -->
+    <p id="appear">
+
+    </p>
+</body>
+
+<script>
+
+// var theParent = document.querySelector("#text");
+// theParent.addEventListener("click", inputChange);
+
+// for (let i = 0; i < 5; i++){
+
+    let element = document.getElementById("text");
+    document.onclick = inputChange;
+function inputChange(e) {
+    console.log("yes");
+    let text = document.getElementById("appear");
+    text.style.display = "block";
+}
+
+
+// }
+
+// let element = document.getElementById('text');
+//     document.onclick = inputChange;
+// function inputChange(e) {
+//     console.log("yes");
+//     let text = document.getElementById("appear");
+//     text.style.display = "block";
+// }
+
+
+
+
+
+// document.getElementById('text').onclick = function appearContent() {
+// document.getElementById('appear').style = "Color: black";
+
+
+    // function clickElementChangeOpacity(){
+    //     let element = document.getElementById("text");
+    //          element.style.display = "block";
+// }
+</script>
+</html>
