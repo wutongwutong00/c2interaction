@@ -76,6 +76,11 @@ transform: translate(-50%,50%);
 z-index: -1;
 }
 
+@media print {
+    .container p{filter: blur(0px); width: 80%; color: black; font-size: 1.5vh; margin:20px ;}
+    h2{top: 1vh; width: 80vw; font-size: var(--primary-phone-font);}
+
+}
 
 @media screen and (max-width: 1200px) {
     img{top: -15%;}
