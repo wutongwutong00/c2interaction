@@ -3,36 +3,99 @@
 <html lang="en">
 <head>
     <title>Themis' Favorite Elizabeth Holmes Quote</title>
-    <link rel="stylesheet" href="https://use.typekit.net/oxz6qsm.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Merriweather:ital,wght@0,700;0,900;1,400&family=Space+Grotesk&display=swap" rel="stylesheet">
 
     <style>
 :root {
-    --page-margin: 50px;
-    --primary-font-size: 20px;
+    --page-margin: 2vw;
+    --primary-font-size: 1.2vw;
+    --h1-font-size: 13vw;
+    --h1-letter-spacing: -0.8w;
+    --primary-phone-font:2.3vw;
+    --primary-tiny-font:3vw;
 }
 
 body {
 margin: var(--page-margin);
-font-family: mencken-std,sans-serif;
+font-family: 'Space Grotesk', sans-serif;
 font-weight: 400;
 font-style: normal;
+background-color: black;
+color: white;
+margin-top: -9vw;
 }
 
-.container {
-display: grid;
-grid: auto-flow / 1fr 1fr 1fr;
-font-size: var(--primary-font-size);
+.container{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-around;
 
+    margin-top: 30%;
 }
+
+p {
+    font-size: var(--primary-font-size);
+    flex: auto;
+    /* padding: 2vw; */
+    margin:20vh;
+    filter: blur(4px);
+}
+
+h2{
+    font-size: var(--primary-font-size);
+    text-align: center; 
+    width: 50vw;
+    position: relative;
+    top: 15vh;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
 
 h1 {
-    font-size: 200px;
+    font-size: 13vw;
     text-align: center;
+    letter-spacing: -0.8vw;
+}
+
+.container p:hover {
+text-align: center;
+filter: blur(0px);
+font-size: 2vw;
+background-color: yellow;
+color: black;
+padding-top: 0.2vh;
 }
 
 img {
-
+width: 70vw;
+position: absolute;
+top: -25%;
+left: 50%;
+transform: translate(-50%,50%);
+z-index: -1;
 }
+
+
+@media screen and (max-width: 1200px) {
+    img{top: -15%;}
+    p{font-size: var(--primary-phone-font);}
+
+    .container p:hover{font-size: var(--primary-phone-font);}
+    .container p:active{font-size: var(--primary-phone-font); filter: blur(0px);}
+    
+    h2{top: 20vh; width: 80vw; font-size: var(--primary-phone-font);}
+}
+
+
+@media screen and (max-width: 700px) {
+    img{top: -5%;}
+    h2{font-size: var(--primary-tiny-font);}
+    p{font-size: var(--primary-tiny-font); margin:7vh; margin-top: 40vh;}
+    .container p:hover{font-size: var(--primary-tiny-font); }
+    .container p:active{filter: blur(0px);}
+}
+
 
     </style>
 </head>
@@ -40,7 +103,8 @@ img {
 
 <h1>Elizabeth Holmes</h1>
 <img src="assets/lizzie.jpeg">
-<p class="container">
+
+<h2>
     Why Elizabeth Holmes, the former biotech entrepreneur who has 
     fallen out of public favor? I mean, yes, she might be convicted 
     of criminal fraud, but let's be real here. She should've been 
@@ -50,34 +114,41 @@ img {
     here, all these rich men could've just done a background. I mean, 
     aren't you supposed to research the things you invest in? But how 
     would I know? I'm just some lousy art student and not a venture capitalist.
-</p>
+</h2>
 
-<p class="container">
+<span class="container">
 
-</p>
-
-<p class="container">
+<p>
     I definitely am afraid of needles. It's the only thing that actually scares me.
+</p>
 
+<p>
     The right to protect the health and well-being of every person, of those we love, is a basic human right.
-    
+</p>
+<p>
     We know more about our credit cards than we know about our bodies.
-    
+</p>    
+<p>  
     This is what happens when you work to change things, and first they think you're crazy, then they fight you, and then all of a sudden you change the world. 
-    
+</p>  
+<p>  
     You’ll get knocked down over and over and over again, and you get back up.
-    
+</p> 
+<p>       
     I know that we made mistakes.
-    
+</p>
+<p>
     When you find what you love, you do it. That’s it.
-    
+</p> 
+<p>
     I believe in the unlimited power of women in the context of science and engineering.
-    
+</p>  
+<p>
     I think that the minute that you have a backup plan, you've admitted that you're not going to succeed.
 </p>
+</p>
 
-
+</span>
 </body>
-
 
 </html>
