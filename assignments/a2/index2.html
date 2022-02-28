@@ -15,11 +15,16 @@
 --p-h3-font-size-mobile:2.5vw;
 
 }
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* html {
+    scroll-behavior: smooth;
+} */
 
     /* body{
 margin:10%;
@@ -29,6 +34,7 @@ margin-top:8%;
 body {
     height: 100%;
     overflow: hidden;
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -49,6 +55,8 @@ body {
     height: 100vh;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     background-color: white;
+    padding-bottom: 3vw;
+    padding-right: 5vw;
 }
 
 
@@ -95,16 +103,29 @@ h3 {
 
 } */
 
-span {
-    position: fixed; 
-    width: 100%;
+
+
+.navbar {
     text-align: center;
-    font-size: 1.2vw;
-    /* margin-top: 5%; */
-    bottom: 2vh;
-    z-index: 1;
+    position: fixed; 
+    bottom:3vh;
+    width: 100%;
+    justify-content:center;
+    z-index: 1; 
     color: black;
     opacity: 20%;
+    /* height: 100%; */
+    margin:0px;
+}
+
+ span {
+
+    padding: 0.1vw;
+    /* position: fixed;  */
+    /* display: inline; */
+    font-size: 1.2vw;
+    /* margin-top: 5%; */
+
 }
 
 h4 {
@@ -119,13 +140,19 @@ h4 {
     opacity: 50%;
 }
 
+a:link,:visited,:active {
+    text-decoration: none;
+    color: black;
+}
 
+a:hover {
+    color: white;
+}
 
 @media screen and (max-width: 1200px) {
     p{font-size:20px;}
-    span{font-size: 2vw;
-        padding-left: 10%;
-        padding-right: 10%;}
+    span{font-size: 1.7vw;}
+    .navbar{margin: 2vw; bottom: 1vh;}
 }
 
 @media screen and (max-width: 800px) {
@@ -133,10 +160,8 @@ h4 {
     h2{font-size: var(--h2-font-size-mobile);}
     p, h3{font-size:var(--p-h3-font-size-mobile);
         padding: 15%;}
-    span{font-size: 2.5vw;
-        padding-left: 10%;
-        padding-right: 10%;}
-  
+    span{font-size: 2.5vw;}
+    .navbar{margin: 4vw; width: 90%; bottom: 1vh;}
 }
 
 
@@ -146,7 +171,15 @@ h4 {
 <!-- first chapter of excerpt__click on texts to generate more text, after clicking turns into punctuations -->    
 
     <!-- <span class="navbar"> -->
-        <span>1 > 2 > 3 > 4 > 5 > 6 > 7 > 8 > 9 > 10 > 11 > 12 > 13 > 14 > 15 > 16 > 17 > 18 > 19 > 20 > 21 > 22 > 23 > 24 > 25 > 26</span>   
+       <div class="navbar"> <span><a href="#s1"> 1 </a></span> <span>></span> <span><a href="#s2">2</a></span> <span>></span> 
+        <span><a href="#s3">3</a></span> <span>></span> <span><a href="#s4">4</a></span> <span>></span> <span><a href="#s5">5</a></span>
+        <span>></span> <span><a href="#s6">6</a></span> <span>></span> <span><a href="#s7">7</a></span> <span>></span> <span><a href="#s8">8</a></span> 
+        <span>></span> <span><a href="#s9">9</a></span> <span>></span> <span><a href="#s10">10</a></span> <span>></span> 
+        <span><a href="#s11">11</a></span> <span>></span> <span><a href="#s12">12</a></span> <span>></span> <span><a href="#s13">13</a></span> 
+        <span>></span> <span><a href="#s14">14</a></span> <span>></span> <span><a href="#s15">15</a></span> <span>></span> 
+        <span><a href="#s16">16</a></span> <span>></span> <span><a href="#s17">17</a></span> <span>></span> <span><a href="#s18">18</a></span> 
+        <span>></span> <span><a href="#s19">19</a></span> <span>></span> <span><a href="#s20">20</a></span> <span>></span> <span><a href="#s1">21</a></span>
+        <span>></span> <span><a href="#s22">22</a></span> <span>></span> <span><a href="#s23">23</a></span></div>
     <!-- </span> -->
 
         <div class="container">
@@ -155,7 +188,7 @@ h4 {
     <h1>GERTRUDE<br>STEIN<br><i>ON</i> <br>PUNCTUATION</h1>
     </section>
 
-    <section>
+    <section id="s1">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspThere are some punctuations that are interesting and there are some punctuations that are not. 
         Let us begin with the punctuations that are not. Of these the one but the first and the most 
         the completely most uninteresting is the question mark. The question mark is alright when it 
@@ -177,14 +210,14 @@ h4 {
         not at any rate anybody can and does see it that way.</p> <h3>1</h3> 
     </section>
 
-    <section>
-        <p id="appear">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSo there are the uninteresting things in 
+    <section id="s2">
+        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSo there are the uninteresting things in 
             punctuation uninteresting in a way that is perfectly 
         obvious, and so we do not have to go any farther into that. There are besides dashes and dots, 
         and these might be interesting spaces might be interesting. They might if one felt that way about them.</p><h3>2</h3>
     </section>
 
-    <section>
+    <section id="s3">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspOne other little punctuation mark one can have feelings about and that is the apostrophe for possession. 
         Well feel as you like about that, I can see and I do see that for many that for some the possessive case 
         apostrophe has a gentle tender insinuation that makes it very difficult to definitely decide to do without 
@@ -196,21 +229,21 @@ h4 {
         positively deny but that I do from time to time let it come in. </p><h3>3</h3>    
     </section>
 
-    <section>
+    <section id="s4">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSo now to come to the real question of punctuation, periods, commas, 
         colons, semi-colons and capitals and small letters.</p><h3>4</h3>    
     </section>
 
-    <section>
+    <section id="s5">
         <h2>I HAVE HAD A LONG AND COMPLICATED LIFE WITH ALL THESE.</h2> 
     </section>
     
-    <section>
+    <section id="s6">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLet us begin with these I use the least first and these are colons 
         and semi-colons, one might add to these commas.</p><h3>6</h3>     
     </section>
 
-    <section>
+    <section id="s7">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWhen I first began writing, I felt that writing should go on, 
         I still do feel that it should go on but when I first began writing I was completely possessed by the 
         necessity that writing should go on and on and if writing should go on what had colons and commas to do 
@@ -219,7 +252,7 @@ h4 {
         and semi-colons to do with it what had commas to do with it what had periods to do with it.</p><h3>7</h3>    
     </section>
 
-    <section>
+    <section id="s8">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWhat had periods to do with it. Inevitably no matter how completely 
         I had to have writing go on, physically one had to again and again stop sometime and if one had to again 
         and again stop sometime and if one had to again and again stop some time then periods had to exist. Beside 
@@ -228,7 +261,7 @@ h4 {
         a perfectly natural happening, I did not believe in periods and I used them. I really never stopped using them.</p><h3>8</h3>    
     </section>
 
-    <section>
+    <section id="s9">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBeside that periods might later come to have a life of their own to 
         commence breaking up things in arbitrary ways, that has happened lately with me in a poem I have written 
         called Winning His Way, later I will read you a little of it. By the time I had written this poem about 
@@ -240,14 +273,14 @@ h4 {
         you do feel what I mean.</p><h3>9</h3>    
     </section>
 
-    <section>
+    <section id="s10">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPeriods have a life of their own a necessity of their own a feeling 
         of their own a time of their own. And that feeling that life that necessity that time can express itself 
         in an infinite variety that is the reason that I have always remained true to periods so much so that as 
         I say recently I have felt that one could need them more than one had ever needed them.</p><h3>10</h3>    
     </section>
     
-    <section>
+    <section id="s11">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspYou can see what an entirely different thing a period is from a 
         comma, a colon or a semi-colon.</p><h3>11</h3>    
     </section>
@@ -256,7 +289,7 @@ h4 {
     <h1>.&nbsp&nbsp&nbsp ,&nbsp&nbsp&nbsp :&nbsp&nbsp&nbsp ;</h1>    
     </section>
 
-    <section>
+    <section id="s12">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspThere are two different way of thinking about colons and semicolons 
         you can think of them as commas and as such they are purely servile or you can think of them as periods and 
         then using them can make you feel adventurous I can see that one might feel about them as periods but I myself 
@@ -272,26 +305,25 @@ h4 {
         what has it to do and why do I feel as I do about them.</p><h3>13</h3>    
     </section>
 
-    <section>
+    <section id="s13">
         <h4>“We forget something fundamental as we read:
 Every sentence could have been otherwise but isn't.
 We can't see all the decisions that led to the final shape of the sentence.
 But we can see the residue of those decisions.” 
 <br><Br><i>― Verlyn Klinkenborg, Several Short Sentences About Writing</i></h4>
-
     </section>
 
-    <section>
+    <section id="s14">
         <h2>what does a comma do.</h2>    
         </section>
 
-    <section>
+    <section id="s15">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspI have refused them so often and left them out so much and did without 
         them so continually that I have come finally to be indifferent to them. I do not now care whether you put them 
         in or not but for a long time I felt very definitely about them and would have nothing to do with them.</p><h3>15</h3>    
     </section>
     
-    <section>
+    <section id="s16">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAs I say commas are servile and they have no life of their own, and 
         their use is not a use, it is a way of replacing one’s own interest and I do decidedly like to like my own 
         interest my own interest in what I am doing. A comma by helping you along holding your coat for you and 
@@ -300,7 +332,7 @@ But we can see the residue of those decisions.”
         was positively degrading. Let me tell you what I feel and what I mean and what I felt and what I meant.</p><h3>16</h3>    
     </section>
 
-    <section>
+    <section id="s17">
     <h4>“There’s another trouble with meaning. We’ve been taught to believe it comes near the end. As if the job of all 
         those sentences were to ferry us along to the place where meaning is enacted—to “the point,” Just before the conclusion, 
         Which restates “the point.” This is especially true in the school model of writing. Remember the papers you wrote? 
@@ -311,17 +343,16 @@ But we can see the residue of those decisions.”
         not knowing where to begin a journey Until you decide where you want it to end. Begin in the wrong place, make the 
         wrong turn, And there’s no getting where you want to go. Why not begin where you already are?” 
         <br><br><i>― Verlyn Klinkenborg, Several Short Sentences About Writing</i></h4>
-
     </section>
 
-    <section>
+    <section id="s18">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWhen I was writing those long sentences of The Making of Americans, 
         verbs active present verbs with long dependent adverbial clauses became a passion with me. I have told you that 
         I recognize verbs and adverbs aided by prepositions and conjunctions with pronouns as possessing the whole of 
         the active life of writing. </p><h3>17</h3>    
     </section>
 
-    <section>
+    <section id="s19">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspComplications make eventually for simplicity and therefore I have always 
         liked dependent adverbial clauses. I have like dependent adverbial clauses because of their variety of dependence 
         and independence. You can see how loving the intensity of complication of these things that commas would be degrading. 
@@ -334,7 +365,7 @@ But we can see the residue of those decisions.”
     <h2>Think about anything you really like to do and you will see what I mean.</h2>    
     </section> -->
 
-    <section>
+    <section id="s20">
     <h2>THINK ABOUT... </h2>
     </section>
     <section>
@@ -344,7 +375,7 @@ But we can see the residue of those decisions.”
     <h2>AND YOU WILL SEE WHAT I MEAN.</h2>    
     </section>
 
-    <section>
+    <section id="s21">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWhen it gets really difficult you want to disentangle rather than to cut 
         the knot, at least of anybody feels who is working with any thread, so anybody feels who is working with any tool 
         so anybody feels who is writing any sentence or reading it after it has been written. And what does a comma do, 
@@ -359,12 +390,12 @@ But we can see the residue of those decisions.”
         themselves by themselves and not helping them, and thereby enfeebling them by putting in a comma.</p><h3>22</h3>    
     </section>
 
-    <section>
+    <section id="s22">
         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSo that is the way I felt about punctuation in prose, in poetry it is a 
         little different but more so and later I will go into that. But that is the way I felt about punctuation in prose.</p><h3>23</h3>   
     </section>
 
-    <section>
+    <section id="s23">
         <h4>Exclamation points have been with us in their modern form for over 600 years, but several writers and commentators 
         have warned that using them is more than a failure of style—it’s also a sign of bad taste, and maybe even poor character. 
         “An exclamation point is like laughing at your own joke,” said F. Scott Fitzgerald. David Marsh, who edits the style guide 
