@@ -4,28 +4,63 @@
     <title>Garden</title>
     
     <link rel="stylesheet" href="https://use.typekit.net/ady7ply.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100;200;300&family=EB+Garamond&family=Mea+Culpa&family=Merriweather:ital,wght@0,700;0,900;1,400&family=Press+Start+2P&family=Space+Grotesk&display=swap" rel="stylesheet">
     <style>
 
       
       body:read-only  {
+        width: 100vw;
+        height: 100vh;
         margin: 30px;
+        /* animation: backgd 5s infinite; */
         background-image: url(assets/milkdecoration_pampa04.jpg);
+        /* animation: backgd 5s infinite; */
         background-repeat: no-repeat;
         background-size: 100%;
         font-family: neue-haas-grotesk-display,sans-serif;
-font-weight: 200;
-font-style: normal;
-cursor: url(assets/butterflycursor.png), auto;
+        font-weight: 200;
+        font-style: normal;
+        cursor: url(assets/butterflycursor.png), auto;
       }
+
+      .background {
+        width: 100vw;
+        height: 100vh;
+        background-color: darkorchid;
+        position: fixed;
+        margin: 0px;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+        animation: backgd 5s infinite;
+        animation-timing-function: linear;
+        opacity: 30%;
+      }
+
+      @keyframes backgd {
+        20%   {background-color:darkorchid;}
+        40%  {background-color:tomato;}
+        60%  {background-color: blue;}
+        80% {background-color:gold;}
+        100%   {background-color:darkorchid;}
+      }
+
 
       .hand {
         position: absolute;
         right: 200px;
         bottom: 150px;
         transition: transform .2s;
+        animation: handroll 7s infintie;
+        /* animation-timing-function: linear; */
       }
         
+
+      @keyframes handroll {
+        0%   {transform:rotate(10deg);}
+        100%   {transform:rotate(350deg);}
+      }
+
       .hand:hover {
         /* animation-duration: 2s;
         animation-name: spinit;
@@ -47,11 +82,29 @@ cursor: url(assets/butterflycursor.png), auto;
         position: absolute;
         bottom: 0;
         left:50%;
+        display: block;
+        z-index: 1;
       }
 
-      .flower:active {
-        opacity: 0;
+      .flower2 {
+        position: absolute;
+        bottom: -70px;
+        left:45%;
+        display: block;
+        /* padding: 20px; */
       }
+
+      .flower:hover {
+        opacity: 0.7;
+      }
+
+      .flower2:hover {
+        opacity: 0.7;
+      }
+
+      /* .flower:active {
+        opacity: 0;
+      } */
 
       .gradient {
         width: 500px;
@@ -63,23 +116,32 @@ cursor: url(assets/butterflycursor.png), auto;
         z-index:-1;
       }
 
-     
 
       h2 {
-        font-size: 85px;
+        overflow: hidden;
+        width: 50vw;
+        height: 50%;
+        font-size: 45px;
         line-height: 90px;
         position: absolute;
-        bottom: 0;
-        z-index:-1;
+        bottom: -10vw;
+        z-index:1;
         filter: blur(4px);
+        letter-spacing: 3vw;
       }
 
       h2:hover {
+        letter-spacing: 0vw;
+        font-size: 55px;
         filter: blur(0px);
-        z-index:0;
+        line-height: 60px;
+        z-index:3;
+        bottom: 0%;
+        width: 80vw;
       }
 
       h1 {
+        
         font-size: 60px;
         color: rgba(255,251,0);
         margin-left:70px ;
@@ -98,6 +160,7 @@ cursor: url(assets/butterflycursor.png), auto;
         background-color: rgba(255,251,0);
         border: 2px solid rgba(255,251,0);
         color: white;
+        letter-spacing: 6vw;
       }
 
       a:link {
@@ -137,23 +200,110 @@ padding: 10px;
     </style>
 </head>
       <body>
+    <div class="background"></div>
     <div class="pictures">  
     <img class="hand" src="assets/ -4.png" width="500px">
-    <img class="flower" src="assets/554f0bdd-f283-4a2e-80c7b3446183e72b.png" width="700px">
+    <img class="flower" id="f1" onclick="appear1()" src="assets/554f0bdd-f283-4a2e-80c7b3446183e72b.png" width="700px">
+    
+    <div>
+    <img class="flower2" id="f2" onclick="appear2()" src="assets/-6.png" width="500px">
+    <img class="flower2" id="f3" onclick="appear3()" src="assets/tumblr_mowhq3zXKQ1rm6jd7o1_400.png" width="400px">
+    <img class="flower2" id="f4" onclick="appear4()" src="assets/flower-2980210_1920.png" width="350px">
+     
+  </div>
     <div class="gradient"></div>
+
   </div>  
 
      
         <h1><a href="https://en.wikipedia.org/wiki/Peony">Peony</a></h1>
         <p class="back"><a href=index.html>undo</a></p>
         <h1><a href="index.html#p1">?</a></h1>
-        <h2>the peony is named after Paeon (also spelled Paean), a student of Asclepius, the 
+        <h2 id="click" >the peony is named after Paeon (also spelled Paean), a student of Asclepius, the 
           Greek god of medicine and healing. <span id="p1">In Greek mythology, when Asclepius became jealous 
           of his pupil, Zeus saved Paeon from the wrath of Asclepius by turning him into the peony flower.</span></h2>
 
 
-      </body>
 
     <script>
+
+      var rand = Math.random();
+      var text = document.getElementById("click");
+      console.log(rand);
+
+
+      if (rand < 0.5) {
+      text.style.fontFamily = 'Press Start 2P';
+      }
+
+      if (rand < 0.75){
+        text.style.fontFamily = 'Merriweather';
+
+      }
+  
+      if (rand < 1) {
+        text.style.fontFamily=  "Azeret Mono";
+
+      }
+
+
+
+
+      function appear1() {
+        console.log(rand);
+        var x = document.getElementById("f1");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+
+}
+
+function appear2() {
+        console.log(rand);
+        var x = document.getElementById("f2");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+
+}
+
+function appear3() {
+        console.log(rand);
+        var x = document.getElementById("f3");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+
+}
+
+function appear4() {
+        console.log(rand);
+        var x = document.getElementById("f4");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+
+}
+
+
+      document.getElementById('p1').onclick = function changeContent() {
+
+// document.getElementById('click').textContent = "NO FLOWERS FOR U";
+document.getElementById('p1').style = "Color: yellow";
+
+
+}
+
+
+
     </script>
+    </body>
     </html>
