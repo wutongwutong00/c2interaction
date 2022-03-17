@@ -10,37 +10,79 @@
   } 
 
       body  {
-        margin: 10vw;
+        margin: 5vw;
+        /* margin-top: -5vw; */
         font-family: signifier;
+        background-color:darkmagenta;
+        color: white;
       }
 
       h1 {
         text-align: center;
         font-family: signifier;
-        font-size: 10vw;
+        font-size: 8vw;
+        letter-spacing: 5vw;
+        width: 100%;
+      }
+
+      h1:hover {
+        letter-spacing: 1vw;
+        transition: all 1s ease-out;
       }
 
       .container {
         display: flex;
         flex-flow: row wrap;
         align-items: center;
-        justify-content: center;
-        width: 70vw;
+        width: 90vw;
+        margin: 5vw;
+        gap: 2vw;
       }
 
+
+      .container--2 {
+        margin-top: -4vw;
+      }
+/* 
+      p {
+        border: ;
+      } */
+
       .item{
-        text-align: center;
-        justify-content: center;
-        /* border: 1px solid black; */
-        flex-flow: row wrap;
-        width: 14%;
+        width: 8vw;
         height: 10vh;
+        padding: 0.9vw;
+        text-align: center;
+      }
+
+      .item:hover {
+        background-color:chartreuse;
+        color: darkmagenta;
+      }
+
+      .item:active {
+        color: darkmagenta;
+        background-color: darkmagenta;
       }
 
       .week{
+        margin-top: -2vw;
+        width:8vw;
+        border: 1px solid white;
+        border-radius:20vw ;
+        padding: 0.8vw;
         text-align: center;
-        flex-flow: row wrap;
-        width: 14%;
+      }
+
+      .week:hover {
+        color:white;
+        background-color:orchid;
+        border-color: white;
+        font-style: italic;
+      }
+
+      .week:active {
+        opacity: 0%;
       }
 
       .item:nth-child(1){
@@ -83,12 +125,15 @@
       .item:nth-child(11){
         order: 11 ;
       }
+
       .item:nth-child(12){
         order: 12;
       }
+
       .item:nth-child(13){
         order: 13;
       }
+
       .item:nth-child(14){
         order: 14;
       }
@@ -178,8 +223,8 @@
 </head>
       <body>
         
-<h1>SEPTEMBER</h1>
-<div class="container">
+<h1>September</h1>
+<div class="container container--1">
   <p class="week">sunday</p>
 <p class="week">monday</p>
 <p class="week">tuesday</p>
@@ -189,7 +234,7 @@
 <p class="week">saturday</p>
 </div>
 <br>
-<div class="container">
+<div class="container container--2">
 <p class="item"></p>
 <p class="item"></p>
 <p class="item"></p>
