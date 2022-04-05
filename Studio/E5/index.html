@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>E5 Filter</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond" rel="stylesheet">
+    <script src="jquery.js"></script>
+    <style>
+body {
+  margin: 10vw;
+}
+    </style>
+    </head>
+<body>
+  <h1>Words I guess</h1>
+
+  <select>
+    <option value="all">All</option>
+    <option value="short">Short Words</option>
+    <option value="long">Long Words</option>
+  </select>
+  <br>
+  <br>
+  <section>
+    <p class="all short" style="display: block;">Gem</p>
+    <p class="all short" style="display: block;">Pepe</p>
+    <p class="all short" style="display: block;">Duck</p>
+    <p class="all long" style="display: block;">Onomatopoeia</p>
+    <p class="all long" style="display: block;">Jerusalum</p>
+    <p class="all long" style="display: block;">Reincarnation</p>
+  </section>
+</body>
+
+<script>
+  $(function(){
+
+$("select").on("change",function(){
+
+ $("p").hide();
+ $("."+this.value).show();
+
+});
+
+});
+
+</script>
+
+
+    </html>

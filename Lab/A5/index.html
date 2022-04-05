@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>A5 The End of Internet</title>
+
+    <style>
+      html * {
+        height: 300vh;
+        width: 300vw;
+      }
+      body {
+        margin: 20vw;
+        cursor: pointer;
+      }
+      
+      h1 {
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 2vw;
+      }
+
+      .neon {
+        font-size: 10vw;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: -0.5vw;
+        color: #FF5F1F;
+        position: absolute;
+        text-shadow: #FF5F1F 0 0 50px;
+      }
+      .neon:hover {
+        color: #A7FF6A;
+        text-shadow: #FFF822 0 0 50px;
+      }
+      .neon:active {
+        color: white;
+        text-shadow: #FFF822 0 0 20px;
+        font-size: 9vw;
+      }
+
+      #galaxystar {
+
+      }
+
+    </style>
+    </head>
+<body>
+  <div class="things">
+  <h1>Welcome To My Storage</h1>
+  <p class="neon">enter <img id="galaxystar" src="assets/galaxystar.gif"></p>
+
+  </div>
+</body>
+
+<script>
+
+// alert("Hope your day is going well");
+// alert("Has the internet come to an end?");
+// alert("Is that why you're here?");
+// alert("RIpeace i guess");
+
+let width = document.body.clientWidth
+let screen = window.innerWidth
+
+window.scrollTo({
+  top: 0,
+  left:width/2-screen/3,
+  behavior:'smooth'
+});
+
+// var result = window.confirm('Are you ready?');
+// if (result === true) {
+//     window.alert("Okay, enjoy!");
+// } else { 
+//     window.alert('You seem uncertain... but oh well, you can\'t be ready for everything.');
+// }
+
+
+
+</script>
+
+
+    </html>
