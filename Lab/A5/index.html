@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="jquery-3.6.0.min.js"></script>
     <title>A5 The End of Internet</title>
 
     <style>
       html * {
-        height: 300vh;
-        width: 300vw;
+        height: 200vh;
+        width: 200vw;
       }
+
       body {
         margin: 20vw;
         cursor: pointer;
@@ -16,16 +18,27 @@
       h1 {
         text-align: center;
         font-family: 'Times New Roman', Times, serif;
-        font-size: 2vw;
+        font-size: 3vw;
       }
 
+      h2 {
+        text-align: center;
+        position: absolute;
+        top: 30vw;
+        font-size: 1.5vw;
+      }
+
+      .stage1 {
+        position: absolute;
+        text-align: center;
+      }
       .neon {
         font-size: 10vw;
         font-family: Arial, Helvetica, sans-serif;
         letter-spacing: -0.5vw;
         color: #FF5F1F;
-        position: absolute;
         text-shadow: #FF5F1F 0 0 50px;
+        position: absolute;
       }
       .neon:hover {
         color: #A7FF6A;
@@ -34,11 +47,125 @@
       .neon:active {
         color: white;
         text-shadow: #FFF822 0 0 20px;
-        font-size: 9vw;
+        font-size: 7vw;
+      }
+      .galaxystar {
+        width: 30%;
+        height: 25%;
+        z-index: -1;
+        position: relative;
+        align-items: center;
+        border-radius: 80px;
       }
 
-      #galaxystar {
+      .stage2 {
+        display: none;
+        font-size: 2vw;
+        position: absolute;
+        top: 60%;
+        left: 20%;
+      }
 
+      svg {
+        position: absolute;
+        width: 15%;
+        height: 15%;
+        top: -20%;
+        fill: black;
+        background-image: url(assets/DVD_logo.svg);
+        animation-duration: 3s;
+        animation-name: dvdslide;
+        animation-iteration-count: infinite;
+        transition-timing-function: ease;
+      }
+      svg:hover {
+        animation-play-state: paused;
+      }
+    
+      @keyframes dvdslide {
+      from {
+      margin-left: 100%;
+      width: 300%;
+      fill: lawngreen;
+      }
+
+      25% {
+      margin-left: 0%;
+      width: 100%;
+      fill: magenta;
+      }
+
+      75% {
+      margin-left: 0%;
+      width: 100%; 
+      fill: turquoise;
+      }
+
+      100%{
+      margin-left: 100%;
+      width: 300%;
+      fill: orangered;
+      }
+    }
+
+  .myButton {
+  width: 250px;
+  height: 25px;
+  position: absolute;
+  top: 10%;
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:25px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:rebeccapurple;
+	font-family:Arial;
+	font-size:17px;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+      .stage3 {
+        width: 30%;
+        height: 40%;
+        display: none;
+        font-size: 2vw;
+        position: relative;
+        top: 80%;
+        left: 20%;
+        background-color: violet;
+        padding: 10vh;
+        color: white;
+        z-index: 2;
+      }
+
+      iframe {
+        position: absolute;
+        top: 20%;
+
+        /* left: 20%; */
+        width: 80%;
+        height: 80%;
+      }
+
+      .stage4 {
+        display: none;
+        top: -10vh;
+        z-index: 200;
+        position: absolute;
+        left: 200%;
+        top: 100%;
       }
 
     </style>
@@ -46,7 +173,46 @@
 <body>
   <div class="things">
   <h1>Welcome To My Storage</h1>
-  <p class="neon">enter <img id="galaxystar" src="assets/galaxystar.gif"></p>
+  <h2>find ur way around it.</h2>
+  <div class="stage1">
+  <p class="neon" onclick="appears2()" id="d1">enter</p>
+  <img class="galaxystar" src="assets/galaxystar.gif">
+  </div>
+
+  <div class="stage2" id="s2">
+  <p onclick="appears3()">The internet has come a long way and 
+    like all things, a beginning comes with an ending too.
+    <br>
+    I do not know how to make it bounce. But i have a picture.
+    <br>
+    Now you are on your own. Follow hidden instructions and find your way.
+  </p>
+    <svg class="dvd" src="assets/DVD_logo.svg"></svg>
+    <a class="myButton" id="d1">its just a button, press above</a>
+  </div>
+
+  <div class="stage3" id="s3">
+  <p>I had a lot of fun. Here is my favorite website of all time.&nbsp;<span onclick="appears4()">click me</span></p>
+  <iframe width="100px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.222485582501!2d-73.99667238421969!3d40.73512967932929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25997ab9723e1%3A0xaec76949c30ccdda!2sParsons%20School%20of%20Design%20%7C%20The%20New%20School!5e0!3m2!1sen!2sus!4v1649397438139!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" id="d1"></iframe>
+  
+  </div>
+
+  <div class="stage4" id="s4">
+  <p onclick="closeEnding()">Unfortunately, due to the overpopulation of
+  <br>websites... the virtual world has collapsed
+  <br>and only a few survivors sustained.
+  <br>this storage has no limit, but only limit to time.
+  <br>
+  <br>
+  I hope u find your way. I was not able to add much
+  <br>to this storage. I have many more around, surviving
+  <br>the huge collapse, but each in their own voices.
+  <br>
+  <br>
+  <br>
+  good bye.
+</p>
+  </div>
 
   </div>
 </body>
@@ -65,7 +231,7 @@ window.scrollTo({
   top: 0,
   left:width/2-screen/3,
   behavior:'smooth'
-});
+})
 
 // var result = window.confirm('Are you ready?');
 // if (result === true) {
@@ -74,8 +240,62 @@ window.scrollTo({
 //     window.alert('You seem uncertain... but oh well, you can\'t be ready for everything.');
 // }
 
+function appears2() {
+        console.log("ok");
+        var x = document.getElementById("s2");
+        if (x.style.display === "none") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+        var position = document.getElementsByClassName("stage2");
+        window.scrollTo({
+          left: position,
+          top: position,
+          behavior:'smooth'
+        })
+        return
+      }
+
+function appears3() {
+        var x = document.getElementById("s3");
+        if (x.style.display === "none") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+
+        window.scrollTo({
+          top: x,
+          behavior:'smooth'
+        })
+        console.log("yes");
+      }
+      
+
+function appears4() {
+
+        var x = document.getElementById("s4");
+        if (x.style.display === "none") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+        console.log("s5ok");
+      }
 
 
+function closeEnding() {
+  document.body.style.backgroundColor = "black";
+  $("#d1").hide();
+
+  let z = document.querySelector("s4");
+  window.scrollTo({
+    top: z,
+    behavior:"smooth"
+  })
+  console.log("s5ok");
+}
 </script>
 
 
