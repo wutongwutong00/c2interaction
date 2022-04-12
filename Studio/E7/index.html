@@ -10,8 +10,31 @@
         margin: 3vw;
     }
 
+    a:link,:visited {
+        text-decoration: none;
+        text-shadow: 1px 1px 5px black;
+        color: white;
+    }
+
+    a:link:hover {
+        text-shadow: 1px 1px 8px tan;
+        color: black;
+    }
+
+    a:link:active {
+        text-decoration: underline;
+        text-shadow: 1px 1px 8px tan;
+        color: black;
+    }
+
     h1 {
         font-size: large;
+        color: black;
+    }
+
+    h1:hover {
+        transform: skew(10deg, -2deg);
+        letter-spacing: 2vw;
     }
 
     h2 {
@@ -19,6 +42,11 @@
         font-size: larger;
         font-weight: 200;
         margin: 0;
+    }
+
+    h2:hover {
+        color: white;
+        text-shadow: 7px 7px 10px black;
     }
     
     h3 {
@@ -28,11 +56,24 @@
         margin: 0;
     }
 
+    h3:hover {
+        color: white;
+        text-shadow: 5px 5px 9px black;
+    }
+
+    h4 {
+        text-align: right;
+        margin-right: 10vw;
+        color: grey;
+    }
+
+
+
     .shadow {
         width: 80vw;
-        height: 80vh;
+        height: 180vh;
         position: absolute;
-        top: 70%;
+        top: 115vh;
         left: 50%;
         right: 0%;
         transform: translate(-50%,-50%);
@@ -40,9 +81,18 @@
         filter: blur(20px);
     }
 
-    img {
+    .ss1 {
         position: absolute;
-        top: 70%;
+        top: 71vh;
+        left: 50%;
+        right: 0%;
+        transform: translate(-50%,-50%);
+        width: 70%;
+    }
+
+    .ss2 {
+        position: absolute;
+        top: 150vh;
         left: 50%;
         right: 0%;
         transform: translate(-50%,-50%);
@@ -58,11 +108,16 @@
     <br>
     <h2>In Praise of Shadow</h2>
     <h3>An Excerpt by Jun'Ichiro Taniza</h3>
+    <h4><a href="https://hugochao.github.io/Portfolio-studio-lab/p_2_part3/II.html">view site</a></h4>
 
     <div class="shadow">
     </div>
+    <br>
+    <br>
+    <br>
 
-    <img src="assets/SS1.gif">
+    <img src="assets/ss1.gif" class="ss1">
+    <img src="assets/ss2.gif" class="ss2">
 </body>
 
 <script>
