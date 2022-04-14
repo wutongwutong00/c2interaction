@@ -23,7 +23,9 @@ h1 {
 h2 {
     font-size: 4vw;
     font-weight: 100;
-    line-height: 4vw;
+    line-height: 3.4vw;
+    margin-top: -2vh;
+    padding-bottom:5vh;
 }
 
 ul {
@@ -31,13 +33,13 @@ ul {
 }
 
 .wrapper {
-        margin-right: 15vw;
+        margin-right: 20vw;
       }
 
 #contents {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    grid-gap: 4vw;
+    grid-gap: 2vw;
     align-items: start;
     justify-items: start;
     padding: 0;
@@ -48,14 +50,11 @@ img {
     height: auto;
 }
 
-img:hover {
-    filter:opacity(50%);
-}
-
 .block {
     padding: var(--margin);
-    background-color: white;
+    /* background-color: white; */
 }
+
 
 
 </style>
@@ -82,6 +81,7 @@ img:hover {
   <template id="image-block">
     <li class="block block--image">
       <img class="block__image" src="">
+      <div class="white--block"></div>
     </li>
   </template>
 
@@ -99,7 +99,7 @@ window.addEventListener('DOMContentLoaded', () => {
         fetch(`https://api.are.na/v2/channels/${channel}?per=100`, {cache: 'no-store'})
           .then(response => response.json())
           .then(data => {
-            // console.log(data);
+            console.log(data);
             // renderTitle(data);
             renderBlocks(data);
 
@@ -131,7 +131,7 @@ window.addEventListener('DOMContentLoaded', () => {
         clone.querySelector('img').src =imageUrl;
 
         document.getElementById('contents').appendChild(clone);
-        // console.log(imageUrl);
+        console.log(imageUrl);
       };
 
 </script>

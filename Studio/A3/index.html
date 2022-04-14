@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
+    
     <title>a Collection of Collections</title>
 
 <style>
+
 body {
     font-family: Arial, sans-serif;
 }
@@ -26,7 +29,6 @@ span {
 
 .category {
     display: flex;
-    width: 20%;
 }
 
 .item {
@@ -35,6 +37,8 @@ span {
     border-right: 1px solid black;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
+    flex-basis: 0;
+    flex-grow: 1;
 }
 
 .item:hover {
@@ -44,8 +48,9 @@ span {
 
 
 .image {
-    width: 100px;
-    background-color: black;
+    /* flex-basis: 100px; */
+    flex-grow: 5;
+
 }
 
 ul {
@@ -67,23 +72,50 @@ li:hover {
     border-bottom: 1px solid white;
 }
 
+.icon {
+    position: absolute;
+    right: 6vw;
+    top: 3vh;
+    width: 100%;
+    display: inline-block;
+    background-size: cover;
+    width: 7vw;
+}
+
+.icon1 {
+    background-image: url(assets/A3__icons-01.svg);
+}
+
+.imageNull {
+    position: relative;
+    left: 0;
+    background-color: mediumblue;
+}
+
+
+
+
+
 </style>
 </head>
 
 
 <body>
+<div>
 <h1 class="header">a &nbsp;COLLECTION <br> of COLLECTIONS</h1>
+<span class="icon icon1"></span>
+</div>
 
 <div class="category">
 <span class="item">EDIBLE</span> 
 <span class="item">INEDIBLE</span>
 <span class="item">MORNING</span>
 <span class="item">NIGHT</span>
-<div class="item image"></div>
+<span class="item image" id="block-image"><div class="imageNull"></div></span>
 </div>
 <div class="list">
 <ul>
-<li>image1</li>
+<li id="block-name">image1</li>
 <li>image2</li>
 <li>image3</li>
 <li>image4</li>
@@ -102,6 +134,32 @@ li:hover {
 
 
 <script>
+
+// window.addEventListener('DOMContentLoaded', () => {
+//         const channel = 'collection-of-collections-fpbuhjunwv4';
+
+//         fetch(`https://api.are.na/v2/channels/${channel}?per=100`, {cache: 'no-store'})
+//           .then(response => response.json())
+//           .then(data => {
+//             // console.log(data);
+//             renderTitle(data);
+//             renderBlocks(data);
+
+//           });
+        
+//       });
+
+//       const renderTitle = (data) => {
+//         let title = data['title'];
+//         document.getElementById('block-name').innerText = title;
+//       };
+
+//       const renderBlocks = (data) => {
+//           let blocks = data['image'];
+//           document.getElementById('block-image') = block
+//       };
+      
+
 
 </script>
 </body>
