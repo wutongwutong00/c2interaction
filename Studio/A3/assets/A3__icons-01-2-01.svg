@@ -5,6 +5,8 @@
 <style type="text/css">
 	.st0{fill:none;stroke:#1300FF;stroke-width:2;stroke-miterlimit:10;}
 </style>
-<path class="st0" d="M202.2,147.7c92,0,166.5,34.5,166.5,77s-74.6,77-166.5,77s-166.5-34.5-166.5-77"/>
-<polyline class="st0" points="260.9,206.4 202.2,147.7 202.2,147.7 260.9,88.9 "/>
+<line class="st0" x1="142.2" y1="43.5" x2="142.2" y2="347.2"/>
+<line class="st0" x1="351.8" y1="142.6" x2="48.2" y2="142.6"/>
+<line class="st0" x1="351.8" y1="248.8" x2="48.2" y2="248.8"/>
+<line class="st0" x1="257.8" y1="43.5" x2="257.8" y2="347.2"/>
 </svg>
