@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 <head>
     
-    <title>a Collection of Collections I1</title>
+    <title>Collection of Collections I1</title>
+    <link rel="shortcut icon" href="assets/favicon.1.png" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.1.png" type="image/x-icon">
+
 
 <style>
 
 body {
     font-family: Arial, sans-serif;
+    height: 100;
+    overflow: hidden;
 }
 
 h1 {
@@ -20,57 +26,107 @@ h1 {
     margin-top: 2vw;
 }
 
-span {
+h1:hover,:focus {
+    visibility: hidden;
+}
+h1:hover + .description {
+    display: block;
+    
+}
+
+h2 {
     font-family: Arial, sans-serif;
     font-weight: 100;
-    padding: 1.5vw;
-    font-size: 2vw;
+    font-size: 3vw;
+    line-height: 95%;
+    margin: 3vw;
+    margin-top: 2vw;
+    width: 75%;
+    position: absolute;
+}
+
+h3 {
+    font-family: Arial, sans-serif;
+    font-weight: 100;
+    font-size: 1vw; 
+    margin: 3vw;
+    margin-top: -2vh;
+    padding-left: 4vw;
+    position: absolute;
+}
+
+.description {
+    display: none;
+    position: absolute;
+    top:4vw ;
+    width: 100%;
 }
 
 .category {
     display: flex;
+    overflow: scroll;
 }
 
-.item {
-    padding-left: 3vw;
-    padding-right: 3vw;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-    flex-basis: 0;
-    flex-grow: 1;
+.list{
+    height: 45vh;
 }
 
-.item:hover {
-    background-color: black;
-    color: white;
-}
-
-
-.image {
-    /* flex-basis: 100px; */
-    flex-grow: 5;
-
-}
-
-ul {
+li {
     display: flex;
     flex-flow: column wrap;
     margin-top: 0vw;
     margin-left: -1vw;
     list-style-type: none;
-}
-
-li {
-    padding: 1vw;
+    padding: 0.2vw;
+    padding-left: 5vw;
     border-bottom: 1px solid black;
+    color: black;
+    background-color: white;
+    width: 75vw;
+    overflow: auto;
 }
 
 li:hover {
-    background-color: black;
+    background-color: blue;
     color: white;
     border-bottom: 1px solid white;
 }
+
+li.btn {
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    font-weight: 100;
+    padding: 1vw 5vw;
+    text-align: left;
+    display: inline-flex;
+    font-size: 2vw;
+    justify-content: flex-start;
+    width: 10%;
+    text-align: center;
+
+}
+
+li.btn:hover {
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+}
+
+.imagedisplay {
+    position: absolute;
+    top: 35vh;
+    left: 75vw;
+    border: 1px solid black;
+    /* box-shadow: 0 0 8px 8px white inset; */
+    background-color: white;
+    z-index: 20;
+    height: 65vh;
+    width: 25vw;
+}
+
+
 
 .icon {
     position: absolute;
@@ -91,7 +147,10 @@ li:hover {
     background-image: url(assets/A3__icons-01-2-01.svg);
 }
 
-
+section {
+    margin-left: -1vw;
+    margin-right: -1vw;
+}
 
 
 
@@ -107,49 +166,79 @@ li:hover {
     <span class="icon icon1"></span></a>
 <h1 class="header">a &nbsp;COLLECTION <br> of COLLECTIONS</h1>
 
+<div class="description">
+<h2><i>This is a collection of collections.</i> 
+    <br>&nbsp;&nbsp;Questioning and exploring what defines a collection &nbsp;&nbsp;and essentially what a collection should be. 
+    <br>&nbsp;&nbsp;We found and photographed what could potentially &nbsp;&nbsp;become the subject of the collection.
+<h3>+ Curated by <u>Anna Bluymenkrants</u> & <u>Wu Tong</u><br>+ Website by Wu Tong</h3></h2></div>
 </div>
+<section>
+<div id="buttons">
+    <li class="btn button1" onclick="filterSelection('edible')"> EDIBLE</li>
+    <li class="btn button2" onclick="filterSelection('inedible')"> INEDIBLE</li>
+    <li class="btn button3" onclick="filterSelection('indoor')"> INDOOR</li>
+    <li class="btn button4" onclick="filterSelection('outdoor')"> OUTDOOR</li>
+    <div class="imagedisplay" id="image--box"></div>
+</div>
+
+<!-- <div class="imagedisplay" id="image--box"></div> -->
 
 <div class="category">
-<span class="item">EDIBLE</span> 
-<span class="item">INEDIBLE</span>
-<span class="item">MORNING</span>
-<span class="item">NIGHT</span>
-<span class="item image" id="block-image"></div></span>
-</div>
-<div class="list">
-<ul>
-<li id="block">
-<p class="block--text">image 1</p>
-</li>
-</ul>
-</div>
+<div class="list" id="contents"></div>
+
+<template id="text-block">
+    <li class="block block--text">
+      <p class="block__text"></p>
+    </li>
+  </template>
+
+  <template id="image-block">
+    <li class="block block--image">
+      <img class="block__image" src="">
+      <p id="image-caption" class="block__image__caption"></p>
+    </li>
+  </template>
+
+  <template id="link-block">
+    <li class="block block--link">
+      <a class="block__link" href="#"></a>
+    </li>
+  </template>
 
 <div class="return"></div>
-
+</section>
 
 <script>
 
 window.addEventListener('DOMContentLoaded', () => {
-        const channel = 'collection-of-collections-fpbuhjunwv4';
+        const channel = 'a-collection-of-collections-yq5n-4bit1a';
 
         fetch(`https://api.are.na/v2/channels/${channel}?per=100`, {cache: 'no-store'})
           .then(response => response.json())
           .then(data => {
             console.log(data);
-            renderTitle(data);
+            // renderImage(data);
+            renderBlocks(data);
 
           });
       });
 
-
-      const renderTitle = (data) => {
-        let title = data['title'];
-        document.getElementById('block').innerText = title;
+      const renderBlocks = (data) => {
+        let blocks = data['contents'];
+        blocks.forEach((block) => {
+          let blockClass = block['class'];
+            renderTitle(block);
+        });
       };
 
-    //   clone.querySelector('p').innerText = block['title'];
-    //   document.getElementById('block').appendChild(clone);
-      
+      const renderTitle = (block) => {
+        let imageBlockTemplate = document.getElementById('image-block');
+        let clone = imageBlockTemplate.content.cloneNode(true);
+        clone.querySelector('p').innerText = block['title'];
+        document.getElementById('contents').appendChild(clone);
+      };
+
+
 
 
 </script>
