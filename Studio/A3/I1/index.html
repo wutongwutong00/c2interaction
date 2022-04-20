@@ -82,7 +82,7 @@ li {
     border-bottom: 1px solid black;
     color: black;
     background-color: white;
-    width: 75vw;
+    width: 100vw;
     overflow: auto;
 }
 
@@ -105,7 +105,11 @@ li.btn {
     justify-content: flex-start;
     width: 10%;
     text-align: center;
+    z-index: 20;
+}
 
+.hidden {
+    display: none;
 }
 
 li.btn:hover {
@@ -116,16 +120,19 @@ li.btn:hover {
 
 .imagedisplay {
     position: absolute;
-    top: 35vh;
+    top: 40vh;
     left: 75vw;
     border: 1px solid black;
     /* box-shadow: 0 0 8px 8px white inset; */
     background-color: white;
     z-index: 20;
-    height: 65vh;
-    width: 25vw;
+    height: 56vh;
+    width: 23vw;
 }
 
+img {
+    height: 100%;
+}
 
 
 .icon {
@@ -167,21 +174,21 @@ section {
 <h1 class="header">a &nbsp;COLLECTION <br> of COLLECTIONS</h1>
 
 <div class="description">
-<h2><i>This is a collection of collections.</i> 
+<h2><u>This is a collection of collections.</u> 
     <br>&nbsp;&nbsp;Questioning and exploring what defines a collection &nbsp;&nbsp;and essentially what a collection should be. 
     <br>&nbsp;&nbsp;We found and photographed what could potentially &nbsp;&nbsp;become the subject of the collection.
 <h3>+ Curated by <u>Anna Bluymenkrants</u> & <u>Wu Tong</u><br>+ Website by Wu Tong</h3></h2></div>
 </div>
 <section>
 <div id="buttons">
-    <li class="btn button1" onclick="filterSelection('edible')"> EDIBLE</li>
-    <li class="btn button2" onclick="filterSelection('inedible')"> INEDIBLE</li>
-    <li class="btn button3" onclick="filterSelection('indoor')"> INDOOR</li>
-    <li class="btn button4" onclick="filterSelection('outdoor')"> OUTDOOR</li>
-    <div class="imagedisplay" id="image--box"></div>
+    <li class="btn" id="ediblebtn" onclick="clickEdible()"> EDIBLE</li>
+    <li class="btn" id="inediblebtn" onclick="clickInedible()"> INEDIBLE</li>
+    <li class="btn" id="indoorbtn" onclick="clickIndoor()"> INDOOR</li>
+    <li class="btn" id="outdoorbtn" onclick="clickOutdoor()"> OUTDOOR</li>
+    <div class="imagedisplay" id="image--box">
+        <img src="">
+    </div>
 </div>
-
-<!-- <div class="imagedisplay" id="image--box"></div> -->
 
 <div class="category">
 <div class="list" id="contents"></div>
@@ -216,31 +223,246 @@ window.addEventListener('DOMContentLoaded', () => {
         fetch(`https://api.are.na/v2/channels/${channel}?per=100`, {cache: 'no-store'})
           .then(response => response.json())
           .then(data => {
-            console.log(data);
-            // renderImage(data);
             renderBlocks(data);
+            renderImage(data);
 
+            console.log(data);
+            // console.log('edible')
           });
       });
 
-      const renderBlocks = (data) => {
+      const renderBlocks = (data, type) => {
         let blocks = data['contents'];
         blocks.forEach((block) => {
           let blockClass = block['class'];
-            renderTitle(block);
+            renderTitle(block, type);
         });
       };
 
-      const renderTitle = (block) => {
+      const renderTitle = (block, type) => {
         let imageBlockTemplate = document.getElementById('image-block');
         let clone = imageBlockTemplate.content.cloneNode(true);
         clone.querySelector('p').innerText = block['title'];
+        clone.querySelector('p').classList.add(type);
+
+        
+        clone.querySelector('li').onclick = () => {
+        document.getElementById('image--box').querySelector('img').src = block['image']['display']['url'];
+        }
         document.getElementById('contents').appendChild(clone);
+      };
+
+      
+      const renderImage = (data) => {
+        let imageUrl = block['image']['display']['url'];
+        let imageBlockTemplate = document.getElementById('image--box');
+        clone.querySelector('img').src =imageUrl;
       };
 
 
 
 
+
+
+    document.getElementById("ediblebtn").onclick = function(){
+        clickEdible();
+        console.log('yes');
+    };
+
+    function clickEdible() {
+        // console.log('hello?');
+        const EdibleChannel = 'edible-19q5s60odeu';
+        fetch(`https://api.are.na/v2/channels/${EdibleChannel}?per=100`, {cache: 'no-store'})
+          .then(response => response.json())
+          .then(data => {
+            let children = document.getElementById('contents').children;
+            for (let i = 0; i < children.length;i++) {
+                if (!children[i].querySelector('p').classList.contains('edible')) {
+                    children[i].classList.add('hidden');
+                }
+            }
+            renderBlocks(data, 'edible');
+            console.log('edible');
+          });
+    }
+
+
+
+    document.getElementById("inediblebtn").onclick = function(){
+        clickInedible();
+        console.log('yes');
+    };
+
+    function clickInedible() {
+        const InedibleChannel = 'inedible-jhtsyzmsif0';
+        fetch(`https://api.are.na/v2/channels/${InedibleChannel}?per=100`, {cache: 'no-store'})
+          .then(response => response.json())
+          .then(data => {
+            let children = document.getElementById('contents').children;
+            for (let i = 0; i < children.length;i++) {
+                if (!children[i].querySelector('p').classList.contains('inedible')) {
+                    children[i].classList.add('hidden');
+                }
+            }
+            renderBlocks(data, 'inedible');
+            console.log('inedible');
+          });
+    }
+
+
+
+    document.getElementById("indoorbtn").onclick = function(){
+        clickIndoor();
+        console.log('yes');
+    };
+
+    function clickIndoor() {
+        const IndoorChannel = 'indoor-bmllu3rh9fg';
+        fetch(`https://api.are.na/v2/channels/${IndoorChannel}?per=100`, {cache: 'no-store'})
+          .then(response => response.json())
+          .then(data => {
+            let children = document.getElementById('contents').children;
+            for (let i = 0; i < children.length;i++) {
+                if (!children[i].querySelector('p').classList.contains('indoor')) {
+                    children[i].classList.add('hidden');
+                }
+            }
+            renderBlocks(data, 'indoor');
+            console.log('indoor');
+          });
+    }
+
+
+    document.getElementById("outdoorbtn").onclick = function(){
+        clickOutdoor();
+        console.log('yes');
+    };
+
+    function clickOutdoor() {
+        const OutdoorChannel = 'outdoor-eyd6hv3evj8';
+        fetch(`https://api.are.na/v2/channels/${OutdoorChannel}?per=100`, {cache: 'no-store'})
+          .then(response => response.json())
+          .then(data => {
+            let children = document.getElementById('contents').children;
+            for (let i = 0; i < children.length;i++) {
+                if (!children[i].querySelector('p').classList.contains('outdoor')) {
+                    children[i].classList.add('hidden');
+                }
+            }
+            renderBlocks(data, 'outdoor');
+            console.log('outdoor');
+          });
+
+
+    }
+    
+
+
+    //       document.getElementById("contents").onclick = function(){
+    //           renderImages();
+    //           console.log('suck');
+    //       }
+
+    //   const renderImages = (data) => {
+    //     let image = data['contents'];
+    //     image.forEach((image) => {
+    //       let imageClass = image['class'];
+    //       // console.log(blockClass);
+    //       if(imageClass == 'Image'){
+    //         renderImage(block);
+    //       }
+    //     });
+    //   };
+
+    //   const renderImage = (block) => {
+    //     let imageUrl = block['image']['display']['url'];
+    //     let imageBlockTemplate = document.getElementById('image--box');
+    //     // let clone = imageBlockTemplate.content.cloneNode(true);
+    //     clone.querySelector('img').src =imageUrl;
+    //       }
+
+
+//     document.getElementById("contents").onclick = function(){
+//         console.log('suck');
+//         renderImage();
+// };
+//     function renderImage() {
+
+//                 window.addEventListener('DOMContentLoaded', () => {
+//             const channel = 'collection-of-collections-fpbuhjunwv4';
+
+//         fetch('https://api.are.na/v2/channels/${channel}?per=100', {cache:'no-store'})
+//         .then (response => response.json())
+//         .then (data => {
+//         })
+//         }
+//         ) 
+
+//         let list = data['contents'];
+//         list.forEach((list) => {
+//           let listClass = list['class'];
+//           // console.log(blockClass);
+//           if(listClass == 'Image'){
+//             renderImage();
+//           }
+//         });
+//         console.log('success');
+
+//       const renderImage = (list) => {
+//         let imageUrl = list['image']['display']['url'];
+//         let imageListTemplate = document.getElementById('image--box');
+//         // let clone = imageBlockTemplate.content.cloneNode(true);
+
+//         clone.querySelector('img').src =imageUrl;
+        
+
+//     }};
+
+
+
+    // function clickEdible() {
+    //     window.addEventListener('DOMContentLoaded', () => {
+    //     const channel = 'edible-19q5s60odeu';
+
+    //     fetch('https://www.are.na/tong-wu-db7orgfuzuk/edible-19q5s60odeu', {
+    //         mode: 'no-cors',
+    //         method: "post",
+    //         headers: {
+    //              "Content-Type": "application/json"
+    //         }
+        
+    //         .then(response => response.json())
+    //         .then(data => {
+    //         // console.log(data);
+    //         // renderImage(data);
+    //             renderBlocks(data);
+    //         })
+    //     });
+
+    //     fetch(`https://api.are.na/v2/channels/${channel}?per=100`, {cache: 'no-store'})
+    //       .then(response => response.json())
+    //       .then(data => {
+    //         // console.log('data');
+    //         // renderImage(data);
+    //         renderBlocks(data);
+    //       });
+    //   });
+
+    //   const renderBlocks = (data) => {
+    //     let blocks = data['contents'];
+    //     blocks.forEach((block) => {
+    //       let blockClass = block['class'];
+    //         renderTitle(block);
+    //     });
+    //   };
+
+    //   const renderTitle = (block) => {
+    //     let imageBlockTemplate = document.getElementById('image-block');
+    //     let clone = imageBlockTemplate.content.cloneNode(true);
+    //     clone.querySelector('p').innerText = block['title'];
+    //     document.getElementById('contents').appendChild(clone);
+    //   };
+      
 </script>
 </body>
 </html>
