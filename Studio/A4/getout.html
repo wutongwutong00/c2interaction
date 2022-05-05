@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Way Out by FKJ</title>
+    <link rel="stylesheet" href="https://use.typekit.net/gyi8lmt.css">
+
+
+<style>
+body {
+    margin: 3vw;
+    overflow: hidden;
+    font-family: garamond-premier-pro-display, serif;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0.5vw;
+    color: white;
+    text-align: center;
+}
+
+.show {
+    opacity: 1;
+}
+
+.backgroundImage {
+    position: fixed;
+    top: -5vh;
+    left: -5vw;
+    background-image: url('assets/wayout.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+	height: 110vh;
+    width: 110%;
+    background-size: cover;
+    z-index: -100;
+    filter: blur(15px);
+}
+
+h1 {
+    font-size: 1.5vw;
+}
+h2 {
+    padding-bottom: 10vw;
+    font-size: 1vw;
+    font-family: forma-djr-deck,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.1vw;
+    opacity: 0;
+}
+h3 {
+    font-size: 1vw;
+}
+
+.playAudio {
+    position: relative;
+    top: 40vh;
+}
+input {
+    transform: translate(0,100%);
+    border: 1px solid white;
+    border-radius: 20vw;
+    padding: 0.5vw;
+    padding-right: 1vw;
+    padding-left: 1.2vw;
+    background-color: transparent;
+    font-size: 2vh;
+    font-family: forma-djr-deck,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.2vw;
+    color: white;
+}
+input:hover {
+        border: 1px solid white;
+        background-color: white;
+        color:palegoldenrod;
+    }
+input:focus{
+        background-color:transparent;
+        color: transparent;
+        border: 0px;
+    }
+/* 
+.text {
+    animation: fadeIn 5s linear infinite;
+}
+@keyframes fadeIn {
+    25% {opacity: 1;
+        filter: blur(0px);}
+    50% {opacity: 0.2;
+        filter: blur(2px);}
+    100% {opacity: 1;
+        filter: blur(0px);}
+} */
+
+</style>
+<body>
+
+<span class="backgroundImage"></span>
+
+    <h2 id="h2">now playing</h2>
+    <div class="text">
+    <h1>way out</h1>
+    <h3><i>by</i></h3>
+    <h1>FKJ</h1>
+    </div>
+<div class="playAudio">
+    <input type="button" value="play" onclick="play()">
+    <audio id="audio" src="assets/audio/FKJ_-_Way_Out_Official_Music_Video_(getmp3.pro).mp3"></audio>
+</div>
+
+</body>
+
+<script>
+
+function play() {
+    
+        var audio = document.getElementById("audio");
+        audio.play();
+        var reveal = document.getElementById("h2");
+        reveal.classList.add("show");
+}
+
+</script>
+</html>

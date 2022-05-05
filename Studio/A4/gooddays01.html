@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Good Days by SZA01</title>
+    <link rel="stylesheet" href="https://use.typekit.net/gyi8lmt.css">
+
+
+
+<style>
+    body {
+        margin: 3vw;
+        overflow: hidden;
+        font-family: garamond-premier-pro-display, serif;
+        font-weight: 300;
+        font-style: normal;
+        letter-spacing: 0.5vw;
+        color: white;
+        text-align: center;
+        text-shadow: white 1px 1px 8px;
+    }
+        
+    .show {
+        opacity: 1;
+    }
+        
+    .backgroundImage {
+        position: fixed;
+        top: -5vh;
+        left: -5vw;
+        background-image: url('assets/gooddays.gif');
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 110vh;
+        width: 110%;
+        background-size: cover;
+        z-index: -100;
+        filter: blur(15px);
+    }
+        
+    h1 {
+        font-size: 1.5vw;
+        position: absolute;
+        top:30vw;
+        right: 10vw;
+    }
+    .artist {
+        position: absolute;
+        top:40vw;
+        right: 30vw;  
+    }
+    h2 {
+        padding-bottom: 10vw;
+        font-size: 1vw;
+        font-family: forma-djr-deck,sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: 0.1vw;
+        opacity: 0;
+        position: absolute;
+        left:30vw;
+    }
+    h3 {
+        font-size: 1vw;
+        position: absolute;
+        top:30vw;
+        left:10vw;
+    }
+        
+    .playAudio {
+        position: relative;
+        top: 40vh;
+    }
+    input {
+        transform: translate(0,100%);
+        border: 1px solid white;
+        border-radius: 20vw;
+        padding: 0.5vw;
+        padding-right: 1vw;
+        padding-left: 1.2vw;
+        background-color: transparent;
+        font-size: 2vh;
+        font-family: forma-djr-deck,sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: 0.2vw;
+        color: white;
+    }
+    input:hover {
+        border: 1px solid white;
+        background-color: white;
+        color:darkslategrey;
+    }
+    input:focus{
+        background-color:transparent;
+        color: transparent;
+        border: 0px;
+    }
+        
+    </style>
+    <body>
+        
+    <span class="backgroundImage"></span>
+        
+        <h2 id="h2">now playing</h2>
+        <h1>good days</h1>
+        <h3><i>by</i></h3>
+        <h1 class="artist">SZA</h1>
+    <div class="playAudio"  id="audioButton">
+        <input type="button" value="play" onclick="play()">
+        <audio id="audio" src="assets/audio/SZA_-_Good_Days_Audio_(getmp3.pro).mp3"></audio>
+    </div>
+        
+    </body>
+        
+    <script>
+        
+    function play() {
+            
+            var audio = document.getElementById("audio");
+            audio.play();
+            var reveal = document.getElementById("h2");
+            reveal.classList.add("show");
+
+    }
+    </script>
+</html>

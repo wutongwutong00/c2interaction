@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Playing Vinyl 01</title>
+    <link rel="stylesheet" href="https://use.typekit.net/gyi8lmt.css">
+
+<style>
+body {
+    margin: 3vw;
+    overflow: hidden;
+    font-family: garamond-premier-pro-display, serif;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    letter-spacing: 1vw;
+}
+
+.containerIcon {
+    display: grid;
+    grid-template-columns: 15vw 15vw 15vw;
+    grid-gap: 2vw 0vw;
+    justify-content: center;
+
+}
+.outerCircle {
+    width: 10vw;
+    height: 10vw;
+    border:1px solid none;
+    border-radius: 20vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+.innerCircle {
+    position: relative;
+    top: 3vw;
+    width: 4vw;
+    height: 4vw;
+    border:1px solid none;
+    border-radius: 20vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+.innerHole {
+    position: relative;
+    top: 1.5vw;
+    width: 1vw;
+    height: 1vw;
+    border:1px solid none;
+    border-radius: 20vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.icon1 {
+    animation: rotateAnimation 2.5s linear infinite;
+    border:1px solid white;
+}
+@keyframes rotateAnimation {
+	from {transform: rotateY(45deg);}
+	to {transform: rotateY(225deg);}
+}
+
+.backgroundImage {
+    position: fixed;
+    top: -5vh;
+    left: -5vw;
+    background-image: url('assets/79a604a069de5aebdc8eccd6c3a6c374.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+	height: 110vh;
+    width: 110%;
+    background-size: cover;
+    z-index: -100;
+    filter: blur(15px);
+}
+
+.backgroundText {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2vh;
+    position: absolute;
+    top: 20vw;
+    left: 50vw;
+    animation: fadeIn 3s linear infinite;
+}
+h2 {
+    font-size: 2vh;
+    position: absolute;
+    top: 45vw;
+    left: 20vw;
+    animation: fadeInExpand 8s ease-in infinite;
+}
+h3 {
+    font-size: 2vh;
+    position: absolute;
+    top: 35vw;
+    right: 15vw;
+    animation: fadeOutExpand 8s ease-in infinite;
+}
+@keyframes fadeIn {
+    25% {opacity: 1;
+        filter: blur(0px);}
+    50% {opacity: 0.2;
+        filter: blur(2px);}
+    100% {opacity: 1;
+        filter: blur(0px);}
+}
+@keyframes fadeInExpand {
+	10% {opacity: 1;
+         font-size: 2vh;
+         filter: blur(0px);}
+	50% {opacity: 0.5;
+        font-size: 1.3vh;
+        filter: blur(1px);}
+    100% {opacity: 1;
+        font-size: 2vh;
+        filter: blur(0px);}
+}
+@keyframes fadeOutExpand {
+	5% {opacity: 1;
+         font-size: 2vh;
+         filter: blur(4px);}
+	50% {opacity: 0.5;
+        font-size: 3vh;
+        filter: blur(0px);}
+    100% {opacity: 1;
+        font-size: 2vh;
+        filter: blur(4px);}
+}
+
+audio {
+    position: absolute;
+    left: 50%;
+    bottom:10%;
+    transform: translate(-50%,50%);
+    opacity: 0.3;
+    filter: blur(4px);
+}
+
+audio:hover {
+    filter: blur(0px);
+}
+
+</style>
+</head>
+<body>
+
+<span class="backgroundImage"></span>
+<audio id="audioPlay"
+        controls
+        src="assets/audio/FKJ_-_Way_Out_Official_Music_Video_(getmp3.pro).mp3">
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>
+
+<div class="containerIcon">
+<div class="outerCircle icon1"><div class="innerCircle icon1"><div class="innerHole icon1"></div></div></div>
+<div class="outerCircle icon2"><div class="innerCircle"><div class="innerHole"></div></div></div>
+<div class="outerCircle icon3"><div class="innerCircle"><div class="innerHole"></div></div></div>
+<div class="outerCircle icon4"><div class="innerCircle"><div class="innerHole"></div></div></div>
+<div class="outerCircle icon5"><div class="innerCircle"><div class="innerHole"></div></div></div>
+<div class="outerCircle icon6"><div class="innerCircle"><div class="innerHole"></div></div></div>
+<div class="outerCircle icon7"><div class="innerCircle"><div class="innerHole"></div></div></div>
+<div class="outerCircle icon8"><div class="innerCircle"><div class="innerHole"></div></div></div>
+<div class="outerCircle icon9"><div class="innerCircle"><div class="innerHole"></div></div></div>
+</div>
+
+<span class="backgroundText">
+<h1>playing vinyl 01</h1>
+<h2>FKJ</h2>
+<h3><i>Way Out</i></h3>
+</span>
+
+</body>
+
+<script>
+
+document.getElementById('audioPlay').play();
+
+</script>
+</html>
