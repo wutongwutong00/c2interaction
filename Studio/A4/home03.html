@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>hey how are you?</title>
+    <link rel="stylesheet" href="https://use.typekit.net/gyi8lmt.css">
+
+<style>
+body {
+    margin: 3vw;
+    overflow: hidden;
+    letter-spacing: 0.5vw;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 300;
+    font-style: normal;
+    background: linear-gradient(0.25turn, #3f87a6, #afb8a9, #f69d3c);
+    /* background: linear-gradient(#e66465, #9198e5); */
+    color: white;
+}
+h1{
+    text-align: center;
+}
+.questionContainer {
+    width: 70vw;
+    height: 30vh;
+    /* background-color: pink; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+.inputAnswer {
+    position: inherit;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    gap: 4vw;
+}
+input {
+    color: white;
+    order:2;
+    border: 1px solid white;
+    border-radius: 20vw;
+    padding: 0.5vw;
+    padding-right: 1vw;
+    padding-left: 1.2vw;
+    background-color: transparent;
+    font-size: 2vh;
+    font-family: forma-djr-deck,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.2vw;
+}
+input:hover {
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+}
+.questionContainer {
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+    }
+
+    @media screen and (max-width: 600px) {
+input {
+    font-size: 3vh;
+    padding: 0.5vw;
+    padding-right: 2.5vw;
+    padding-left: 3vw;
+}
+.containerIcon {
+    grid-gap: 6vw 5vw;
+    justify-content: center;
+    grid-template-columns: 20vw 20vw 20vw;
+}
+.outerCircle {
+    width: 20vw;
+    height: 20vw;
+}
+.innerCircle {
+    top: 6vw;
+    width: 8vw;
+    height: 8vw;
+}
+.innerHole {
+    top: 3.5vw;
+    width: 1vw;
+    height: 1vw;
+}
+.questionContainer {
+    font-size: 4vw;
+    padding-bottom: 20vw;
+}
+.inputAnswer {
+    gap: 10vw;
+}
+}
+
+
+</style>
+
+
+
+<body>
+<div class="questionContainer show" id="question1">
+    <h1>are you feeling ok?</h1>
+<div class="inputAnswer">
+    <input type="button" value="yes" onclick="yes1Hide()">
+    <input type="button" value="no" onclick="no1Hide()">
+    </div>
+</div>
+
+<div class="questionContainer" id="question2">
+    <h1>what color are you feeling?</h1>
+<div class="inputAnswer">
+    <a href="gooddays.html"><input type="button" id="buttonYellow" value="yellow"></a>
+    <a href="blueskys.html"><input type="button" id="buttonBlue" value="blue"></a>
+    <a href="escapetola.html"><input type="button" id="buttonRed" value="red"></a>
+    </div>
+</div>
+
+<div class="questionContainer" id="question3">
+    <h1>want some relaxation?</h1>
+<div class="inputAnswer">
+    <a href="getout.html"><input type="button" value="yeah"></a>
+    <input type="button" value="nah" onclick="no2Hide()">
+    </div>
+</div>
+
+<div class="questionContainer" id="question4">
+    <h1>how about some noise?</h1>
+<div class="inputAnswer">
+    <a href="timetopretend.html"><input type="button" value="sounds good"></a>
+    <input type="button" value="still no." onclick="no3Hide()">
+    </div>
+</div>
+
+<div class="questionContainer" id="question5">
+    <h1>would you like to cry?</h1>
+<div class="inputAnswer">
+    <a href="thewispsings.html"><input type="button" value="ok..."></a>
+    <input type="button" value="nope" onclick="no4Hide()">
+    </div>
+</div>
+
+<div class="questionContainer" id="question6">
+    <h1>maybe you need to come back to earth.</h1>
+<div class="inputAnswer">
+    <a href="comebacktoearth.html"><input type="button" value="yes."></a>
+    <input type="button" value="no." onclick="no5Hide()">
+    </div>
+</div>
+
+<div class="questionContainer" id="question7">
+    <h1>hmm... seems like you need some Frank Ocean...</h1>
+<div class="inputAnswer">
+    <a href="godspeed.html"><input type="button" value="Godspeed"></a>
+    <a href="whiteferrari.html"><input type="button" value="White Ferrari"></a>
+    </div>
+</div>
+
+
+</body>
+
+<script>
+
+function yes1Hide(){
+    document.getElementById("question1").classList.remove('show');
+    document.getElementById("question2").classList.add('show');
+}
+
+function no1Hide(){
+    document.getElementById("question1").classList.remove('show');
+    document.getElementById("question3").classList.add('show');
+}
+
+function no2Hide(){
+    document.getElementById("question3").classList.remove('show');
+    document.getElementById("question4").classList.add('show');
+}
+
+function no3Hide(){
+    document.getElementById("question4").classList.remove('show');
+    document.getElementById("question5").classList.add('show');
+}
+
+function no4Hide(){
+    document.getElementById("question5").classList.remove('show');
+    document.getElementById("question6").classList.add('show');
+}
+
+function no5Hide(){
+    document.getElementById("question6").classList.remove('show');
+    document.getElementById("question7").classList.add('show');
+}
+
+</script>
+</html>

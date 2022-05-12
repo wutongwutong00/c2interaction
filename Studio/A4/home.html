@@ -16,7 +16,6 @@ body {
 h1{
     text-align: center;
 }
-
 .questionContainer {
     width: 70vw;
     height: 30vh;
@@ -27,22 +26,17 @@ h1{
     transform: translate(-50%,-50%);
     display: none;
 }
-
 .show {
     display: block;
 }
-
 .hide {
     display: none;
 }
-
-
 .inputAnswer {
     position: inherit;
     top: 70%;
     left: 50%;
     transform: translate(-50%, 0);
-    /* background-color: blue; */
     display: flex;
     gap: 4vw;
 }
@@ -65,7 +59,6 @@ input:hover {
     border: 1px solid black;
     color: white;
 }
-
 .questionContainer {
     animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1;
@@ -79,6 +72,41 @@ input:hover {
         opacity: 1;
      }
     }
+
+    @media screen and (max-width: 600px) {
+input {
+    font-size: 3vh;
+    padding: 0.5vw;
+    padding-right: 2.5vw;
+    padding-left: 3vw;
+}
+.containerIcon {
+    grid-gap: 6vw 5vw;
+    justify-content: center;
+    grid-template-columns: 20vw 20vw 20vw;
+}
+.outerCircle {
+    width: 20vw;
+    height: 20vw;
+}
+.innerCircle {
+    top: 6vw;
+    width: 8vw;
+    height: 8vw;
+}
+.innerHole {
+    top: 3.5vw;
+    width: 1vw;
+    height: 1vw;
+}
+.questionContainer {
+    font-size: 4vw;
+    padding-bottom: 20vw;
+}
+.inputAnswer {
+    gap: 10vw;
+}
+}
 
 
 </style>
@@ -135,6 +163,14 @@ input:hover {
     </div>
 </div>
 
+<div class="questionContainer" id="question7">
+    <h1>hmm... seems like you need some Frank Ocean...</h1>
+<div class="inputAnswer">
+    <a href="godspeed.html"><input type="button" value="Godspeed"></a>
+    <a href="whiteferrari.html"><input type="button" value="White Ferrari"></a>
+    </div>
+</div>
+
 
 </body>
 
@@ -163,6 +199,11 @@ function no3Hide(){
 function no4Hide(){
     document.getElementById("question5").classList.remove('show');
     document.getElementById("question6").classList.add('show');
+}
+
+function no5Hide(){
+    document.getElementById("question6").classList.remove('show');
+    document.getElementById("question7").classList.add('show');
 }
 
 </script>

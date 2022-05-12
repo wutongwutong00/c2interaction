@@ -16,11 +16,9 @@ body {
     color: white;
     text-align: center;
 }
-
 .show {
     opacity: 1;
 }
-
 .backgroundImage {
     position: fixed;
     top: -5vh;
@@ -34,9 +32,12 @@ body {
     z-index: -100;
     filter: blur(15px);
 }
-
 h1 {
     font-size: 1.5vw;
+    position: absolute;
+    animation: fadeIn 4s linear infinite; 
+    right: 20vw;
+    top: 5vw;
 }
 h2 {
     padding-bottom: 10vw;
@@ -46,14 +47,36 @@ h2 {
     font-style: normal;
     letter-spacing: 0.1vw;
     opacity: 0;
+    position:absolute;
+    left: 10vw;
 }
 h3 {
     font-size: 1vw;
+    animation: fadeIn 3s linear infinite; 
+    right: 10vw;
+    position: absolute;
+}
+.artist {
+    position: relative;
+    animation: fadeIn 2s linear infinite;
+    right: 30vw;
+    top:35vw;
 }
 
+@keyframes fadeIn {
+    25% {opacity: 1;
+        filter: blur(0px);}
+    50% {opacity: 0.2;
+        filter: blur(2px);}
+    100% {opacity: 1;
+        filter: blur(0px);}
+    }
+
 .playAudio {
+    top: 50%;
+    left: 50%;
     position: relative;
-    top: 40vh;
+    transform: translate(-50%,-150%);
 }
 input {
     transform: translate(0,100%);
@@ -73,36 +96,131 @@ input {
 input:hover {
         border: 1px solid white;
         background-color: white;
-        color:black;
+        color:darkgray;
     }
 input:focus{
         background-color:transparent;
         color: transparent;
         border: 0px;
     }
-/* 
-.text {
-    animation: fadeIn 5s linear infinite;
+.containerIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: grid;
+    grid-template-columns: 15vw 15vw 15vw;
+    grid-gap: 2vw 0vw;
+    justify-content: center;
 }
-@keyframes fadeIn {
-    25% {opacity: 1;
-        filter: blur(0px);}
-    50% {opacity: 0.2;
-        filter: blur(2px);}
-    100% {opacity: 1;
-        filter: blur(0px);}
-} */
+.outerCircle {
+    width: 10vw;
+    height: 10vw;
+    border:1px solid none;
+    border-radius: 20vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+.innerCircle {
+    position: relative;
+    top: 3vw;
+    width: 4vw;
+    height: 4vw;
+    border:1px solid none;
+    border-radius: 20vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+.innerHole {
+    position: relative;
+    top: 1.5vw;
+    width: 1vw;
+    height: 1vw;
+    border:1px solid none;
+    border-radius: 20vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+.rotation {
+    animation: rotateAnimation 2.5s linear infinite;
+}
+.icon6 { border:1px solid white;}
+
+@keyframes rotateAnimation {
+	from {transform: rotateY(45deg);}
+	to {transform: rotateY(225deg);}
+}
+
+
+@media screen and (max-width: 600px) {
+input {
+    font-size: 3vh;
+    padding: 0.5vw;
+    padding-right: 2.5vw;
+    padding-left: 3vw;
+}
+.containerIcon {
+    grid-gap: 6vw 5vw;
+    justify-content: center;
+    grid-template-columns: 20vw 20vw 20vw;
+}
+.outerCircle {
+    width: 20vw;
+    height: 20vw;
+}
+.innerCircle {
+    top: 6vw;
+    width: 8vw;
+    height: 8vw;
+}
+.innerHole {
+    top: 3.5vw;
+    width: 1vw;
+    height: 1vw;
+}
+h1 {
+    font-size: 6vw;
+    right: 20vw;
+    top: 30vw;
+}
+.artist {
+    top: 130vw;
+    right: 25vw;
+}
+h2 {
+    position: absolute;
+    font-size: 3vw;
+    left: 10vw;
+}
+h3 {
+    font-size: 5vw;
+    right: 10vw;
+    top: 100vw;
+}
+}
 
 </style>
 <body>
 
-<span class="backgroundImage"></span>
+<span class="backgroundImage" alt="light from sun shining through the woods looking upwards" ></span>
+
+<div class="containerIcon">
+    <div class="outerCircle"><div class="innerCircle"><div class="innerHole"></div></div></div>
+    <div class="outerCircle"><div class="innerCircle"><div class="innerHole"></div></div></div>
+    <div class="outerCircle"><div class="innerCircle"><div class="innerHole"></div></div></div>
+    <div class="outerCircle"><div class="innerCircle"><div class="innerHole"></div></div></div>
+    <div class="outerCircle"><div class="innerCircle"><div class="innerHole"></div></div></div>
+    <div class="outerCircle icon6" id="vinylIcon"><div class="innerCircle icon6" id="vinylIcon"><div class="innerHole icon6" id="vinylIcon"></div></div></div>
+    <div class="outerCircle"><div class="innerCircle"><div class="innerHole"></div></div></div>
+    <div class="outerCircle"><div class="innerCircle"><div class="innerHole"></div></div></div>
+    <div class="outerCircle"><div class="innerCircle"><div class="innerHole"></div></div></div>
+</div>
 
     <h2 id="h2">now playing</h2>
     <div class="text">
     <h1>the wisp sings</h1>
     <h3><i>by</i></h3>
-    <h1>Winter Aid</h1>
+    <h1 class="artist">Winter Aid</h1>
     </div>
 <div class="playAudio">
     <input type="button" value="play" onclick="play()">
@@ -119,6 +237,8 @@ function play() {
         audio.play();
         var reveal = document.getElementById("h2");
         reveal.classList.add("show");
+        var animation = document.getElementById("vinylIcon");
+        animation.classList.add("rotation");
 }
 
 </script>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Gather</title>
+    
+    <style>
+
+  body {
+    margin: 5vw;
+    overflow: hidden;
+  }
+
+  span {
+    font-size: 3vw;
+    padding: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border: 2px solid black;
+    border-radius: 20vw;
+    font-family: helvetica;
+    margin: 1vw;
+  }
+
+  #selectionRainy:hover {
+    background-color:royalblue;
+  }
+  #selectionSpace:hover {
+    background-color:black;
+    color: white;
+  }
+  #selectionGather:hover {
+    background-color:red;
+  }
+  #selectionShop:hover {
+    background-color:violet;
+  }
+  #selectionGhibli:hover {
+    background-color:darkkhaki;
+  }
+  .selection{
+    justify-content: center;
+    text-align: center;
+  }
+  .backgroundImage {
+    background-image: url('assets/gatherImage.jpg');
+    position: fixed;
+        top: -5vh;
+        left: -5vw;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 110vh;
+        width: 110%;
+        background-size: cover;
+        z-index: -100;
+        filter: blur(10px);
+  }
+.appearBox {
+  width: 80%;
+  height: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-40%);
+}
+.enterBox {
+  width: 80%;
+  height: 80%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-40%);
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5vw;
+  box-shadow: 0px 0px 15px black;
+  animation: fadeIn ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  display: block;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+p {
+  padding:5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 1.5vw;
+}
+#enterButton {
+  position: relative;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 0px 4px 0px black;
+  font-size: 1vw;
+  padding:1vw;
+  border-radius: 5vw;
+  font-size: 1.5vw;
+}
+#enterButton:hover {
+  background-color: black;
+  color: white;
+}
+#enterButton:active {
+  box-shadow: 0px 4px 0px black;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+}
+.hide {
+animation: fadeOut ease 1s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+}
+@keyframes fadeOut {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+     }
+}
+.blur {
+  filter: blur(5px);
+}
+#audio {
+  display: none;
+}
+#fish {
+  display: block;
+  width: 10vw;
+  height: 13vh;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+    </style>
+</head>
+<body>
+  <div class="backgroundImage"></div>
+  <audio id="audio" src="assets/gatherAudio.mp3"></audio>
+
+  <div class="selection" id="blurSelection">
+  <span id="selectionRainy">Rainy</span>
+  <span id="selectionSpace">Space</span>
+  <span id="selectionGather">Gather</span>
+  <span id="selectionShop">Shop</span>
+  <span id="selectionGhibli">Ghibli</span>
+</div>
+
+<div class="appearBox">
+
+<div class="enterBox" id="hideBox">
+<p id="intro">Welcome to Gather.<br>
+the setting is Chinese New year and you are having family dinner
+with everyone in the family. Your cousins are here,
+your aunts are here, everyone is surrounded by the table.
+your mission is to snatch the food on the table faster
+than your cousins. Or else you will leave with an empty stomach.
+<br><br> click on the food as fast as possible, before your cousins
+eat it all!<br><br>
+<input type="button" id="enterButton" value="enter" onclick="startGame()">
+</p>
+</div>
+
+
+</div>
+<img src="assets/fish.png" id="fish">
+
+</body>
+<script>
+
+function startGame() {
+  document.getElementById("hideBox").classList.add('hide');
+  console.log("hello");
+  document.getElementById("blurSelection").classList.add('blur');
+  var sound = document.getElementById("audio");
+  audio.play();
+  
+}
+
+</script>
+
+</html>
