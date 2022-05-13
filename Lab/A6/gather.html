@@ -88,7 +88,7 @@
      }
 }
 p {
-  padding:5vw;
+  padding:3vw;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   font-size: 1.5vw;
@@ -135,7 +135,6 @@ animation-fill-mode: forwards;
   display: none;
 }
 #fish {
-  display: block;
   width: 10vw;
   height: 13vh;
   z-index: 10;
@@ -144,7 +143,20 @@ animation-fill-mode: forwards;
   left: 50%;
   transform: translate(-50%,-50%);
 }
-
+.hide2 {
+  display: none;
+}
+#countNumber {
+  position: absolute;
+  bottom: 1vw;
+  left: 50%;
+  transform: translate(-50%,0);
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  padding:2vw;
+  border-radius: 20vw;
+  font-size: 3vw;}
     </style>
 </head>
 <body>
@@ -159,10 +171,10 @@ animation-fill-mode: forwards;
   <span id="selectionGhibli">Ghibli</span>
 </div>
 
-<div class="appearBox">
+<div class="appearBox" id="mainBox">
 
 <div class="enterBox" id="hideBox">
-<p id="intro">Welcome to Gather.<br>
+<p id="intro">Welcome to Gather.<br><br>
 the setting is Chinese New year and you are having family dinner
 with everyone in the family. Your cousins are here,
 your aunts are here, everyone is surrounded by the table.
@@ -173,22 +185,36 @@ eat it all!<br><br>
 <input type="button" id="enterButton" value="enter" onclick="startGame()">
 </p>
 </div>
-
-
+<div class ="gameBox" id="playNow">
+<img src="assets/fish.png" id="fish" class="hide2">
+<div id="countNumber" class="hide2">0</div>
 </div>
-<img src="assets/fish.png" id="fish">
+</div>
 
 </body>
 <script>
 
 function startGame() {
   document.getElementById("hideBox").classList.add('hide');
-  console.log("hello");
   document.getElementById("blurSelection").classList.add('blur');
   var sound = document.getElementById("audio");
   audio.play();
-  
+  document.getElementById("fish").classList.remove('hide2');
+  document.getElementById("countNumber").classList.remove('hide2');
+  var count = 0;
+  var btn = document.getElementById("fish");
+  var disp = document.getElementById("countNumber");
+  btn.onclick = function () {
+        count++;
+        disp.innerHTML = count;
+        console.log("yes");
+  var img = document.getElementById("fish");
+        img.style.top = document.getElementById("mainBox").clientHeight * Math.random() + 'px';
+        img.style.left = document.getElementById("mainBox").clientWidth * Math.random() + 'px';
+        document.body.appendChild(img);
+        }
 }
+//     // var randomNum = Math.floor(Math.random() * myPix.length);}
 
 </script>
 
