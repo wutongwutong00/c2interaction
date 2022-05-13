@@ -22,7 +22,7 @@
     margin: 1vw;
   }
 
-  #selectionRainy:hover {
+  #selectionOcean:hover {
     background-color:royalblue;
   }
   #selectionSpace:hover {
@@ -57,7 +57,7 @@
   }
 .appearBox {
   width: 80%;
-  height: 60%;
+  height: 70%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -157,6 +157,11 @@ animation-fill-mode: forwards;
   padding:2vw;
   border-radius: 20vw;
   font-size: 3vw;}
+  a:link,a:visited {
+    text-decoration: none;
+    color: black;
+  }
+
     </style>
 </head>
 <body>
@@ -164,11 +169,11 @@ animation-fill-mode: forwards;
   <audio id="audio" src="assets/gatherAudio.mp3"></audio>
 
   <div class="selection" id="blurSelection">
-  <span id="selectionRainy">Rainy</span>
-  <span id="selectionSpace">Space</span>
-  <span id="selectionGather">Gather</span>
-  <span id="selectionShop">Shop</span>
-  <span id="selectionGhibli">Ghibli</span>
+    <a href="ocean.html"><span id="selectionOcean">Ocean</span></a>
+    <a href="space.html"><span id="selectionSpace">Space</span></a>
+    <a href="gather.html"><span id="selectionGather">Gather</span></a>
+    <span id="selectionShop" onclick="showAlert()">Shop</span>
+    <a href="ghibli.html"><span id="selectionGhibli">Ghibli</span></a>
 </div>
 
 <div class="appearBox" id="mainBox">
@@ -211,11 +216,15 @@ function startGame() {
   var img = document.getElementById("fish");
         img.style.top = document.getElementById("mainBox").clientHeight * Math.random() + 'px';
         img.style.left = document.getElementById("mainBox").clientWidth * Math.random() + 'px';
+        img.style.right = document.getElementById("mainBox").clientWidth * Math.random() + 'px';
         document.body.appendChild(img);
         }
 }
 //     // var randomNum = Math.floor(Math.random() * myPix.length);}
 
+function showAlert() {
+  alert("Boycott Capitalism no shopping for u XD");
+}
 </script>
 
 </html>

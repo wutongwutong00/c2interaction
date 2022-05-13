@@ -31,7 +31,7 @@
     margin: 1vw;
   }
 
-  #selectionRainy:hover {
+  #selectionOcean:hover {
     background-color:royalblue;
   }
   #selectionSpace:hover {
@@ -47,7 +47,10 @@
   #selectionGhibli:hover {
     background-color:darkkhaki;
   }
-
+  a:link,a:visited {
+    text-decoration: none;
+    color: black;
+  }
 
   .selection{
     justify-content: center;
@@ -61,12 +64,17 @@
   <h1>this is a safe space<br>for <u>ambience</u></h1>
 
   <div class="selection">
-  <span id="selectionRainy">Rainy</span>
-  <span id="selectionSpace">Space</span>
-  <span id="selectionGather">Gather</span>
-  <span id="selectionShop">Shop</span>
-  <span id="selectionGhibli">Ghibli</span>
+    <a href="ocean.html"><span id="selectionOcean">Ocean</span></a>
+    <a href="space.html"><span id="selectionSpace">Space</span></a>
+    <a href="gather.html"><span id="selectionGather">Gather</span></a>
+    <span id="selectionShop" onclick="alert()">Shop</span>
+    <a href="ghibli.html"><span id="selectionGhibli">Ghibli</span></a>
 </div>
 
 </body>
+<script>
+  window.onload = function alert() {
+  alert("Boycott Capitalism no shopping for u XD");
+}
+</script>
 </html>

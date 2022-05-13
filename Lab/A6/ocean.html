@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Ocean</title>
+    
+    <style>
+
+  body {
+    margin: 5vw;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  span {
+    font-size: 3vw;
+    padding: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border: 2px solid black;
+    border-radius: 20vw;
+    font-family: helvetica;
+    margin: 1vw;
+  }
+  #selectionRainy:hover {
+    background-color:royalblue;
+  }
+  #selectionSpace:hover {
+    background-color:black;
+    color: white;
+  }
+  #selectionGather:hover {
+    background-color:red;
+  }
+  #selectionShop:hover {
+    background-color:violet;
+  }
+  #selectionGhibli:hover {
+    background-color:darkkhaki;
+  }
+  a:link,a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  .selection{
+    justify-content: center;
+    text-align: center;
+  }
+.hide {
+  display: none;
+}
+#enterButton {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 0px 4px 0px black;
+  font-size: 1vw;
+  padding:1vw;
+  border-radius: 5vw;
+  font-size: 1.5vw;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#enterButton:hover {
+  background-color: black;
+  color: white;
+}
+#enterButton:active {
+  box-shadow: 0px 4px 0px black;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+}
+  .backgroundImage {
+    position: fixed;
+        top: -5vh;
+        left: -5vw;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 110vh;
+        width: 110%;
+        background-size: cover;
+        z-index: -100;
+  }
+  .ocean1{
+    background-image: url('assets/ocean1.jpg');
+  }
+  .ocean2{
+    background-image: url('assets/ocean2.jpg');
+  }
+  .ocean3{
+    background-image: url('assets/ocean3.jpg');
+  }
+  .text {
+  background-color: yellow;
+  padding:0.5vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  }
+  .oceanhi {
+  width: auto;
+  height: 15vw;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  }
+  audio {
+    display: none;
+  }
+    </style>
+</head>
+<body>
+  <!-- <div class="backgroundImage ocean3"></div> -->
+
+  <div id="container1">
+  <div class="backgroundImage ocean1"></div>
+  <p class="text">this is the ocean</p>
+  <input type="button" id="enterButton" value="ok" onclick="hideText1()">
+  </div>
+
+  <div id="container2" class="hide">
+  <div class="backgroundImage ocean2"></div>
+  <p class="text">this is frank ocean</p>
+  <input type="button" id="enterButton" value="ok..." onclick="hideText2()">
+  </div>
+
+  <div id="container3" class="hide">
+    <div class="backgroundImage ocean3"></div>
+    <img src="assets/oceanhi.jpg" class="oceanhi">
+    <p class="text">this is frank ocean in da ocean</p>
+    <input type="button" id="enterButton" value="again....." onclick="hideText3()">
+    <audio id="audio" src="assets/Frank_Ocean_-_White_Ferrari_(getmp3.pro).mp3"></audio>
+    </div>
+
+  <div class="selection">
+    <a href="ocean.html"><span id="selectionOcean">Ocean</span></a>
+    <a href="space.html"><span id="selectionSpace">Space</span></a>
+    <a href="gather.html"><span id="selectionGather">Gather</span></a>
+    <span id="selectionShop" onclick="showAlert()">Shop</span>
+    <a href="ghibli.html"><span id="selectionGhibli">Ghibli</span></a>
+</div>
+
+</body>
+
+<script>
+window.onload = addEventListener(click,load);
+
+function load(){
+  document.getElementsByClassName("ocean2").classList.add('hide');
+}
+
+function hideText1() {
+  document.getElementById("container1").classList.add('hide');
+  document.getElementById("container2").classList.remove('hide');
+}
+function hideText2() {
+  document.getElementById("container2").classList.add('hide');
+  document.getElementById("container3").classList.remove('hide');
+  var audio = document.getElementById("audio");
+            audio.play();
+}
+function hideText3() {
+  document.getElementById("container3").classList.add('hide');
+  document.getElementById("container1").classList.remove('hide');
+}
+function showAlert() {
+  alert("Boycott Capitalism no shopping for u XD");
+}
+</script>
+
+</html>

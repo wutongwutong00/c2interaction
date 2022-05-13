@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Space</title>
+    
+    <style>
+
+  body {
+    margin: 5vw;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  span {
+    font-size: 3vw;
+    padding: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border: 2px solid black;
+    border-radius: 20vw;
+    font-family: helvetica;
+    margin: 1vw;
+  }
+  #selectionOcean:hover {
+    background-color:royalblue;
+  }
+  #selectionSpace:hover {
+    background-color:black;
+    color: white;
+  }
+  #selectionGather:hover {
+    background-color:red;
+  }
+  #selectionShop:hover {
+    background-color:violet;
+  }
+  #selectionGhibli:hover {
+    background-color:darkkhaki;
+  }
+  a:link,a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  .selection{
+    justify-content: center;
+    text-align: center;
+  }
+  .backgroundImage {
+    position: fixed;
+        top: -5vh;
+        left: -5vw;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 110vh;
+        width: 110%;
+        background-size: cover;
+        background-image: url('assets/space.jpg');
+        z-index: -100;
+  }
+  #enterButton {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 0px 4px 0px black;
+  font-size: 1vw;
+  padding:1vw;
+  border-radius: 5vw;
+  font-size: 1.5vw;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#enterButton:hover {
+  background-color: black;
+  color: white;
+}
+#enterButton:active {
+  box-shadow: 0px 4px 0px black;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+}
+.hide {
+  display: none;
+}
+p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: none;
+}
+.show {
+  display: block;
+}
+    </style>
+</head>
+<body>
+
+  <div class="selection">
+    <a href="ocean.html"><span id="selectionOcean">Ocean</span></a>
+    <a href="space.html"><span id="selectionSpace">Space</span></a>
+    <a href="gather.html"><span id="selectionGather">Gather</span></a>
+    <span id="selectionShop" onclick="showAlert()">Shop</span>
+    <a href="ghibli.html"><span id="selectionGhibli">Ghibli</span></a>
+  </div>
+  
+
+  <div class="backgroundImage" id="bgImage"></div>
+  <audio id="audio" src="assets/Taylor_Swift_-_Blank_Space_Audio_(getmp3.pro).mp3"></audio>
+  <input type="button" id="enterButton" value="space" onclick="play()">
+  <p id="text">blank space...</p>
+
+</body>
+
+<script>
+  function play(){
+  var audio = document.getElementById("audio");
+            audio.play();
+  document.getElementById("bgImage").classList.add('hide');
+  document.getElementById("enterButton").classList.add('hide');
+  document.getElementById("text").classList.add('show');
+}
+
+function showAlert() {
+  alert("Boycott Capitalism no shopping for u XD");
+}
+
+</script>
+
+</html>
